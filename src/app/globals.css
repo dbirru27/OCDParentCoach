@@ -32,3 +32,66 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif), Georgia, serif;
 }
+
+/* Markdown article styles */
+.prose-article h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-article h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-article p {
+  color: rgb(45 45 45 / 0.75);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.prose-article ul, .prose-article ol {
+  color: rgb(45 45 45 / 0.75);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose-article ul { list-style-type: disc; }
+.prose-article ol { list-style-type: decimal; }
+
+.prose-article li {
+  margin-bottom: 0.25rem;
+}
+
+.prose-article strong {
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+.prose-article blockquote {
+  border-left: 4px solid var(--color-sage);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  background: rgb(143 174 139 / 0.05);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose-article blockquote p {
+  color: rgb(45 45 45 / 0.7);
+  font-style: italic;
+}
+
+.prose-article hr {
+  border: 0;
+  border-top: 1px solid var(--color-cream-dark);
+  margin: 2rem 0;
+}

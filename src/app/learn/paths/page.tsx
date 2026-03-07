@@ -1,52 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { InfoTooltip } from "@/components/info-tooltip";
-import { glossary } from "@/lib/glossary";
+import { learningPaths, getPathContents } from "@/lib/learning-data";
 
 export const metadata: Metadata = {
   title: "Learning Paths",
   description: "Guided learning journeys for parents of children with OCD.",
 };
-
-const paths = [
-  {
-    slug: "just-learned",
-    title: "Just Learned My Child Has OCD",
-    description: "A gentle 5-part introduction to understanding OCD and what you can do.",
-    parts: 5,
-    time: "45 min",
-  },
-  {
-    slug: "starting-erp",
-    title: "Starting ERP at Home",
-    description: "Learn how to support Exposure and Response Prevention (ERP) in everyday life.",
-    tooltip: { term: "ERP", definition: glossary.ERP },
-    parts: 8,
-    time: "1.5 hours",
-  },
-  {
-    slug: "reducing-accommodation",
-    title: "Reducing Accommodation",
-    description: "Gradually shift from accommodating OCD to empowering your child.",
-    tooltip: { term: "Accommodation", definition: glossary.accommodation },
-    parts: 6,
-    time: "1 hour",
-  },
-  {
-    slug: "preparing-for-therapy",
-    title: "Preparing for a Therapist Visit",
-    description: "What to know, what to ask, and how to make the most of professional help.",
-    parts: 3,
-    time: "25 min",
-  },
-  {
-    slug: "supporting-teenager",
-    title: "Supporting a Teenager with OCD",
-    description: "Age-appropriate strategies for navigating OCD with older children.",
-    parts: 6,
-    time: "1 hour",
-  },
-];
 
 export default function LearningPathsPage() {
   return (
@@ -59,28 +18,51 @@ export default function LearningPathsPage() {
           Curated journeys to guide you step by step.
         </p>
 
-        <div className="mt-12 space-y-5">
-          {paths.map((path) => (
-            <div key={path.slug} className="group rounded-2xl border border-cream-dark bg-white p-6 shadow-sm hover:shadow-md hover:border-sage/30 transition-all">
-              <Link
-                href={`/learn/paths/${path.slug}`}
-                className="block"
+        <div className="mt-12 space-y-8">
+          {learningPaths.map((path) => {
+            const contents = getPathContents(path);
+            return (
+              <div
+                key={path.slug}
+                className="rounded-2xl border border-cream-dark bg-white p-6 shadow-sm"
               >
-                <div className="flex items-center gap-2">
-                  <h2 className="font-serif text-xl font-semibold text-charcoal group-hover:text-sage-dark transition-colors">
-                    {path.title}
-                  </h2>
-                  {"tooltip" in path && path.tooltip && (
-                    <InfoTooltip text={`${path.tooltip.term}: ${path.tooltip.definition}`} />
-                  )}
-                </div>
-                <p className="mt-2 text-sm text-charcoal/60">{path.description}</p>
-                <p className="mt-3 text-xs text-charcoal/40">
-                  {path.parts} parts &middot; {path.time}
+                <h2 className="font-serif text-xl font-semibold text-charcoal">
+                  {path.title}
+                </h2>
+                <p className="mt-2 text-sm text-charcoal/60">
+                  {path.description}
                 </p>
-              </Link>
-            </div>
-          ))}
+                <p className="mt-1 text-xs text-charcoal/40">
+                  {contents.length} parts &middot;{" "}
+                  {path.estimatedMinutes < 60
+                    ? `${path.estimatedMinutes} min`
+                    : `${(path.estimatedMinutes / 60).toFixed(1)} hours`}
+                </p>
+
+                <div className="mt-5 space-y-2">
+                  {contents.map((content, i) => (
+                    <Link
+                      key={content.slug}
+                      href={`/learn/${content.slug}`}
+                      className="group flex items-center gap-3 rounded-xl border border-cream-dark p-3 hover:border-sage/30 hover:bg-sage/5 transition-all"
+                    >
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sage/10 text-xs font-semibold text-sage-dark">
+                        {i + 1}
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="text-sm font-medium text-charcoal group-hover:text-sage-dark transition-colors truncate">
+                          {content.title}
+                        </h3>
+                        <p className="text-xs text-charcoal/40">
+                          {content.readingTimeMinutes} min read
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
