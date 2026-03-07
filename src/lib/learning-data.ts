@@ -30,7 +30,7 @@ export interface LearningPath {
 
 export const learningContent: LearningContent[] = [
   {
-    slug: 'understanding-ocd',
+    slug: 'understanding-ocd-in-children',
     title: 'Understanding OCD in Children',
     contentType: 'article',
     topic: 'basics',
@@ -212,7 +212,7 @@ ERP is not easy. But it works. And every exposure your child completes is a smal
     relatedSituationSlugs: ['hands-raw', 'bedtime-rigid-rituals'],
   },
   {
-    slug: 'accommodation-cycle',
+    slug: 'the-accommodation-cycle',
     title: 'The Accommodation Cycle',
     contentType: 'article',
     topic: 'accommodation',
@@ -306,7 +306,7 @@ You started accommodating because you love your child. You will reduce accommoda
     relatedSituationSlugs: ['asks-same-question-over', 'wash-hands-before-touching'],
   },
   {
-    slug: 'stop-accommodating',
+    slug: 'how-to-stop-accommodating',
     title: 'How to Stop Accommodating (Gradually)',
     contentType: 'article',
     topic: 'accommodation',
@@ -421,7 +421,7 @@ Reducing accommodation is one of the hardest things you will do as a parent. The
     relatedSituationSlugs: ['bedtime-rigid-rituals', 'morning-routine-hostage'],
   },
   {
-    slug: 'ocd-preschoolers',
+    slug: 'ocd-in-preschoolers',
     title: 'OCD in Preschoolers (Ages 4-7)',
     contentType: 'article',
     topic: 'basics',
@@ -527,7 +527,7 @@ Parenting a young child with OCD is exhausting, confusing, and often isolating. 
     relatedSituationSlugs: ['goodnight-exact-sequence', 'objects-right-place-sleep'],
   },
   {
-    slug: 'ocd-tweens',
+    slug: 'ocd-in-tweens',
     title: 'OCD in Tweens (Ages 8-12)',
     contentType: 'article',
     topic: 'basics',
@@ -639,7 +639,7 @@ Your tween is at an ideal age for treatment. They are old enough to understand w
     relatedSituationSlugs: ['erases-rewrites-paper-tears', 'replays-conversations'],
   },
   {
-    slug: 'ocd-teenagers',
+    slug: 'ocd-in-teenagers',
     title: 'OCD in Teenagers (Ages 13-18)',
     contentType: 'article',
     topic: 'basics',
@@ -789,54 +789,85 @@ OCD is highly treatable at every age. Many teenagers who engage in ERP experienc
       'Consistency between therapy sessions and home life is critical',
       'Expect setbacks and treat them as learning opportunities',
     ],
-    body: `## What ERP Looks Like at Home
+    body: `## Your Role as an ERP Supporter
 
-If your child is working with a therapist on Exposure and Response Prevention (ERP), you play a crucial supporting role. ERP asks your child to face their fears gradually without performing compulsions — and that takes enormous courage. Your job is to be their steady, encouraging presence throughout the process.
+When your child is in ERP therapy, you become a critical part of the team. The therapist works with your child during sessions, but the real practice happens at home, in the messy, unpredictable moments of daily life. Your role is to support that practice — not to become a therapist yourself, but to create an environment where your child can be brave.
 
-### Your Role as a Parent Coach
+## Understanding What Your Child Is Doing
 
-**You are not your child's therapist.** You do not need to design exposures or push your child through exercises. Your role is to:
+In ERP, your child is deliberately facing things that make them anxious while resisting the urge to perform compulsions. This means they will be uncomfortable — sometimes very uncomfortable. That discomfort is not a sign that something is going wrong. **It is the process working.**
 
-- **Encourage without forcing** — "I know this is hard, and I believe you can do it"
-- **Resist accommodation** — gently decline to participate in rituals or provide reassurance
-- **Celebrate bravery** — praise the effort, not the outcome
-- **Stay calm** — your child will borrow your emotional regulation
-- **Communicate with the therapist** — share what you observe at home
+Think of it like physical therapy after an injury. The exercises hurt. The patient doesn't enjoy them. But the discomfort is the path to healing. Your job is to be the encouraging presence in the room — acknowledging the pain while gently encouraging them to keep going.
 
-### Practical Tips for Daily Life
+## The Do's of Supporting ERP
 
-**Create a supportive environment.** Talk openly about OCD as something external — "the OCD bully" or "the worry monster." This helps your child see OCD as something they can fight, not something they are.
+### Do: Communicate with the Therapist
 
-**Follow the therapist's lead.** If the therapist assigns homework exposures, support them exactly as prescribed. Don't make them easier (that's accommodation) or harder (that's overwhelming).
+Stay in close contact with your child's therapist. You should know what exposures your child is currently working on, what the at-home practice plan looks like, how to respond when your child encounters triggers naturally, and what language and strategies the therapist uses so you can be consistent.
 
-**Handle anxiety spikes with empathy.** When your child is distressed during an exposure:
-- Stay physically close
-- Use a calm, warm tone
-- Acknowledge the difficulty: "I can see this is really hard"
-- Remind them it will pass: "Anxiety always comes down eventually"
-- Do NOT provide reassurance about the OCD fear itself
+### Do: Validate Feelings Without Reinforcing OCD
 
-### When Your Child Resists
+There's a crucial difference between these two responses:
 
-Resistance is normal and expected. Your child's brain is telling them that facing the fear is dangerous. Some strategies:
+**Reinforcing OCD:** "I know this is scary. Let me check the lock for you so you feel better."
 
-- **Validate first:** "I understand you don't want to do this"
-- **Remind them of their goals:** "Remember, you said you wanted to be able to have sleepovers again"
-- **Offer choices within the exposure:** "Would you like to start with the easier version or the harder one?"
-- **Never shame or punish** for not completing an exposure
+**Validating without reinforcing:** "I know this is scary. OCD is telling you something bad will happen, but you're strong enough to sit with this feeling. I'm right here."
 
-### Handling Setbacks
+Acknowledge the anxiety as real and valid. Don't dismiss it. But don't solve it by accommodating the compulsion.
 
-OCD recovery is not linear. Your child will have good days and bad days. After a setback:
+### Do: Praise Bravery, Not Results
 
-- Normalize it: "Everyone has tough days. This doesn't erase your progress"
-- Review what worked before
-- Contact the therapist if setbacks persist
-- Take care of yourself — supporting ERP is emotionally demanding
+Instead of praising the absence of anxiety ("See, you weren't even scared!"), praise the courage:
+- "I saw you touch that doorknob and not wash your hands. That took real guts."
+- "You only asked once tonight instead of five times. You're fighting OCD so hard."
+- "I know that was really uncomfortable and you did it anyway. I'm proud of you."
 
-### The Long Game
+This matters because your child will often still feel anxious during and after exposures, especially early on. If you only praise when they're calm, they may feel like they're failing when they're anxious.
 
-ERP typically shows meaningful improvement within 12-20 sessions, but the skills your child learns will serve them for life. Your consistent support at home is what bridges the gap between therapy sessions and real-world progress.`,
+### Do: Model Tolerance of Uncertainty
+
+OCD often demands certainty — certainty that hands are clean, doors are locked, bad things won't happen. One powerful thing you can do is **model comfortable uncertainty** in your own life:
+
+- "I'm not sure if I locked the car, but I'm not going to check. It's probably fine."
+- "I can't guarantee nothing bad will happen. Nobody can. And that's okay."
+- "I made a mistake at work today. Oh well — everyone does."
+
+Your child watches how you handle uncertainty. Show them it's manageable.
+
+## The Don'ts of Supporting ERP
+
+### Don't: Push Exposures the Therapist Hasn't Assigned
+
+It can be tempting to "help" by creating exposures on your own. Resist this urge. Exposures need to be carefully calibrated — too easy and they don't help; too hard and they can be overwhelming and counterproductive. Follow the therapist's plan.
+
+### Don't: Accommodate "Just This Once"
+
+The occasional accommodation might seem harmless, but it sends a mixed message. If you've agreed to stop answering reassurance questions, stick to it even when your child is having a bad day, you're exhausted, you're in public, or your child says something heartbreaking. Consistency is the most important factor.
+
+### Don't: Show Your Own Anxiety
+
+This is hard but important. When your child is doing an exposure, they are looking to you for cues about whether this is safe. If your face shows worry or your voice sounds tense, your child will pick up on it. Before supporting an exposure, take a breath. Relax your shoulders. Put a calm, confident expression on your face. **Even if you're anxious inside, project steadiness.**
+
+### Don't: Give Up After a Bad Day
+
+ERP progress is not linear. There will be setbacks — days where your child seems to regress, where rituals come back stronger, where they beg you to accommodate. These setbacks are normal and expected. They don't mean the treatment isn't working. Stick with the plan.
+
+## Handling Difficult Moments
+
+When your child is in the middle of an exposure and struggling:
+
+1. **Stay physically present.** Sometimes just being there is enough.
+2. **Use short, calm statements.** "You're doing great. OCD wants you to give in, but you're stronger."
+3. **Don't over-talk.** Too much reassurance or too many words can become a compulsion in itself.
+4. **Remind them of past successes.** "Remember when touching the doorknob felt impossible? Now you do it without thinking."
+5. **Use humor if your child responds to it.** Some kids find it helpful to laugh at OCD.
+6. **Have a distraction ready** for after the exposure — a game, a show, a snack.
+
+## Taking Care of Yourself Through This Process
+
+Supporting a child through ERP is emotionally taxing. Watching your child in distress and not stepping in to fix it goes against every parenting instinct. You need your own support — talk to the therapist about your own feelings, consider individual therapy or a parent support group, lean on your partner, and practice your own stress management.
+
+You are doing something incredibly hard and incredibly loving. The short-term difficulty of supporting ERP leads to long-term freedom for your child.`,
     relatedSituationSlugs: ['hands-raw', 'checking-door-locks', 'bedtime-rigid-rituals'],
   },
 
@@ -857,55 +888,88 @@ ERP typically shows meaningful improvement within 12-20 sessions, but the skills
       'A consistent, OCD-free wind-down routine creates a foundation for change',
       'Your calm presence is the most powerful tool you have',
     ],
-    body: `## Why Bedtime Is So Hard
+    body: `## Why Bedtime Is OCD's Favorite Time
 
-Bedtime is one of the most common battlegrounds for childhood OCD. When the lights go down and distractions disappear, anxious thoughts get louder. Your child may need to perform elaborate rituals — saying goodnight a specific way, checking under the bed, arranging objects — and the stakes feel impossibly high because sleep depends on it.
+If you dread bedtime because of OCD rituals, you are far from alone. Bedtime is one of the most commonly affected times of day for children with OCD, and there are good reasons for this:
 
-### Understanding the Pattern
+- **Less distraction** — During the day, school, activities, and play provide natural distraction from obsessions. At bedtime, the child is alone with their thoughts.
+- **Increased fatigue** — Emotional regulation is harder when a child is tired, making anxiety feel bigger and more unmanageable.
+- **Separation** — For many children, going to bed means separating from parents, which can trigger fears about safety and control.
+- **Quiet and dark** — The sensory reduction of a dark, quiet room can make obsessive thoughts feel louder and more vivid.
 
-Your child is not being difficult. Their brain is sending false alarm signals that something terrible will happen unless they complete their rituals. The more exhausted they become, the harder it is to resist these signals, creating a vicious cycle.
+## Recognizing OCD-Driven Bedtime Behaviors
 
-### Strategies That Help
+### Normal Bedtime Routines
+- Reading a story, brushing teeth, saying goodnight
+- Wanting a nightlight or favorite stuffed animal
+- Brief checking that a parent is nearby
 
-**1. Build a Consistent Wind-Down Routine**
+### OCD-Driven Rituals
+- Needing to say goodnight in an exact sequence of words — and starting over if it's "wrong"
+- Arranging objects on the nightstand in a specific way
+- Checking under the bed or in the closet a specific number of times
+- Needing a parent to repeat a phrase or action exactly
+- A routine that takes 30+ minutes and causes distress if interrupted
+- Extending the routine by adding new steps over time
 
-Create a simple, predictable pre-bed routine that is separate from OCD rituals:
-- Bath or shower (time-limited)
-- Pajamas and teeth brushing
-- 10-15 minutes of calm reading together
-- One goodnight exchange
+The key differentiator is **distress and rigidity.** A healthy routine is flexible — it can be shortened if you're running late. An OCD ritual feels non-negotiable, and disrupting it causes significant anxiety or the need to start over.
 
-This gives your child's brain a healthy structure to latch onto.
+## Strategies That Actually Help
 
-**2. Gradually Reduce Ritual Time**
+### 1. Set a Clear Routine — Then Shorten It
 
-Rather than eliminating rituals cold turkey, work with your child to shorten them:
-- If bedtime currently takes 90 minutes of rituals, aim for 80 minutes this week
-- Use a timer (agreed upon together, not imposed)
-- Celebrate each small reduction
+Work with your child to define a reasonable bedtime routine (5-10 minutes max). Write it down or create a visual schedule for younger children. This gives the routine structure without letting OCD expand it. Once set, **gradually shorten it** over time. If the current OCD-driven routine takes 45 minutes, don't try to get to 10 minutes overnight. Trim it by 5 minutes each week.
 
-**3. The "Good Enough" Goodnight**
+### 2. One Goodnight, and Done
 
-If your child needs you to say goodnight in a specific way:
-- Say goodnight warmly but imperfectly
-- If they ask you to start over, calmly say: "I already said goodnight, and I meant it"
-- Stay nearby but don't re-engage with the ritual
+If your child demands a specific goodnight phrase or sequence, move toward a single, simple goodnight:
+- **Week 1:** Say the phrase the "right" way twice instead of five times
+- **Week 2:** Say it once
+- **Week 3:** Say a normal goodnight: "Goodnight, love you"
+- **Week 4:** Brief goodnight from the doorway
 
-**4. Create a Worry Box**
+Let your child know the plan in advance. "Starting tonight, I'm going to say goodnight once at the door."
 
-Before bed, have your child write worries on slips of paper and put them in a box. Say: "The box will hold your worries tonight. You can pick them up tomorrow if you still want them." Most children find the worries feel smaller in the morning.
+### 3. Be Calm and Boring
 
-**5. Manage Your Own Anxiety**
+When OCD demands come at bedtime — "You have to say it again!" — respond with calm, brief, boring statements:
+- "I've already said goodnight. I love you. It's time for sleep."
+- "OCD wants me to check again, but we're not doing that tonight."
+- "I know this is hard. You're safe. Goodnight."
 
-Your child can sense your stress about bedtime. Take a few deep breaths before starting the routine. Remind yourself: "Tonight might be hard, and that's okay. We're making progress over time."
+Then **walk away.** Do not engage in extended conversations about whether something is safe, locked, or okay. Every minute of engagement is fuel for OCD.
 
-### What to Expect
+### 4. Use a Transitional Object
 
-When you start reducing bedtime rituals, things may get worse before they get better. This is called an **extinction burst** — your child's OCD is fighting back because it's losing control. This is actually a sign that your approach is working. Stay the course with compassion and consistency.
+For younger children, a stuffed animal or special blanket can serve as a "brave buddy" — something that provides comfort without feeding the OCD cycle. Some families create a small card with encouraging phrases the child can read when OCD gets loud at night.
 
-### When to Get Help
+### 5. Address the Room Setup Once
 
-If bedtime rituals consistently take more than 30 minutes, if your child is getting less than adequate sleep, or if the whole family is affected, consider working with an OCD specialist who can guide you through a structured approach.`,
+If your child needs things arranged a certain way, set up the room together **once** before the routine begins, and then it's done. "We've set up your room. It's ready. Now we do our routine and lights out." Do not return to rearrange.
+
+### 6. Allow Some Anxiety
+
+This is hard, but important. When you walk out and your child is anxious, **that anxiety is not dangerous.** It is uncomfortable, but it will pass. Every night that your child falls asleep despite the anxiety, their brain learns that bedtime is safe without the ritual.
+
+You might hear crying, calling out, or protests. You can briefly reassure ("I love you, you're safe, goodnight") but avoid re-entering the room for extended comfort or ritual completion.
+
+### 7. Reward Bravery in the Morning
+
+When your child has a brave bedtime — even partially brave — celebrate it the next morning:
+- "You went to sleep without the checking last night. That was amazing."
+- Sticker charts or small rewards can be very motivating, especially for younger children
+
+## What to Expect
+
+The first few nights of changing bedtime rituals are usually the hardest. Your child may be more upset than usual, take longer to fall asleep, call out or come out of their room repeatedly, or say things designed to make you give in.
+
+This typically peaks around nights 2-4 and then gradually improves. Most families see noticeable improvement within 1-2 weeks.
+
+## When to Get More Help
+
+If bedtime OCD rituals are taking more than 30 minutes, if your child is getting less sleep than they need, or if the anxiety is so severe that they're unable to function the next day, it's time to involve a professional. A therapist experienced in pediatric OCD can create a specific bedtime ERP plan tailored to your child.
+
+Bedtime can become peaceful again. It takes patience, consistency, and some difficult nights — but families come out the other side.`,
     relatedSituationSlugs: ['bedtime-rigid-rituals', 'goodnight-exact-sequence', 'objects-right-place-sleep'],
   },
 
@@ -913,7 +977,7 @@ If bedtime rituals consistently take more than 30 minutes, if your child is gett
   // Article 10: Talking to Your Child's School
   // -------------------------------------------------------------------------
   {
-    slug: 'talking-to-school',
+    slug: 'talking-to-school-about-ocd',
     title: "Talking to Your Child's School About OCD",
     contentType: 'article',
     topic: 'school',
@@ -928,55 +992,99 @@ If bedtime rituals consistently take more than 30 minutes, if your child is gett
     ],
     body: `## Why School Communication Matters
 
-OCD does not stay at home. Your child carries their anxieties, compulsions, and avoidance patterns into the classroom. Without understanding, teachers may inadvertently make things worse — allowing excessive bathroom breaks for handwashing, letting a child redo assignments endlessly, or punishing behaviors they don't understand.
+School is where your child spends most of their waking hours. It's also a place full of OCD triggers — shared supplies, time pressure, social interactions, performance expectations, and the need to follow rules. If your child's school doesn't understand OCD, well-meaning teachers can accidentally make things worse by accommodating rituals, punishing OCD-driven behaviors, or misinterpreting symptoms.
 
-### Starting the Conversation
+## Starting the Conversation
 
-**Schedule a meeting** with your child's teacher, school counselor, and ideally a special education coordinator. Come prepared with:
+### Who to Talk To
+- **Start with the teacher** — they see your child daily and will implement most accommodations
+- **Involve the school counselor** — they can be a valuable ally and in-school support person
+- **Contact the 504 coordinator** if you want to pursue formal accommodations
+- **Include the school psychologist** if available
 
-- A brief explanation of OCD (many educators confuse it with perfectionism)
-- How OCD specifically affects your child at school
-- What you're working on in therapy
-- What the school can do to help
+### What to Say
+You don't need to share every detail. Keep it focused and practical:
 
-### Key Points to Communicate
+*"I want to let you know that [child's name] has been diagnosed with OCD. This affects them in some specific ways at school, and I'd like to talk about how we can work together to support them."*
 
-**OCD is a neurobiological condition**, not a behavior choice. Your child cannot "just stop" any more than a child with asthma can "just breathe."
+### Educating the Teacher
+Most teachers have limited understanding of OCD. Common misconceptions to address:
+- **"OCD means being neat."** Explain that OCD involves intrusive thoughts causing severe anxiety and compulsions performed to relieve that anxiety.
+- **"They just need to stop worrying."** Explain that OCD is brain-based — your child cannot simply choose to stop.
+- **"They're being difficult."** Explain that OCD behaviors are driven by genuine distress, not defiance.
 
-**Accommodation vs. support.** Explain the difference:
-- **Harmful accommodation:** Letting your child wash hands 20 times, redoing tests endlessly
-- **Helpful support:** Extra time on assignments (to compensate for OCD interference), a signal to leave class briefly if overwhelmed, seating near the door
+## Formal Accommodations: Section 504 Plans
 
-### 504 Plans
+A **504 plan** is a legal document that outlines accommodations for a student with a disability that substantially limits learning. OCD frequently meets this threshold. Common accommodations include:
 
-A 504 plan provides formal accommodations without requiring a special education classification. Common OCD-related 504 accommodations include:
+**Homework and Assignments:**
+- Extended time on assignments and tests
+- Reduced homework load (quality over quantity)
+- Permission to type instead of handwrite (for children who erase and rewrite compulsively)
+- Modified grading for assignments affected by OCD
 
-- Extended time on tests and assignments
-- Permission to leave class briefly for anxiety management
-- A designated safe person to check in with
-- Modified homework expectations during treatment
-- Permission to use noise-canceling headphones
-- Breaks during standardized testing
+**Classroom Environment:**
+- Preferential seating (away from triggers, near the door for easy exit)
+- Permission to leave the classroom for brief breaks
+- Access to a safe space when overwhelmed
+- Flexibility around shared materials if contamination is an issue
 
-### IEPs
+**Testing:**
+- Extended time and testing in a separate, quiet location
+- Breaks during tests
+- Permission to circle answers instead of writing them out
 
-If OCD significantly impacts your child's ability to access education, they may qualify for an Individualized Education Program (IEP) under "Other Health Impairment" or "Emotional Disturbance." An IEP provides more comprehensive support including specialized instruction and related services.
+**Attendance:**
+- Flexibility for therapy appointments
+- Modified attendance policies for difficult mornings
+- Plan for late arrivals when OCD makes leaving home harder
 
-### Working with Teachers
+**Social and Emotional:**
+- Regular check-ins with school counselor
+- Permission to use coping strategies in class
+- Teacher awareness of signs of escalating anxiety
 
-**Educate, don't blame.** Teachers generally want to help but may not know how. Share a brief one-page fact sheet about your child's OCD (without revealing private details).
+## IEP: When a 504 Isn't Enough
 
-**Align school responses with therapy goals.** If your child's therapist is working on reducing checking, the school should gently limit (not forcefully stop) excessive checking behaviors.
+If OCD severely impacts your child's ability to learn and a 504 plan is insufficient, an **IEP** under IDEA may be appropriate. An IEP provides more comprehensive services, including possible specialized instruction and school-based counseling.
 
-**Establish a communication channel.** Weekly emails or a shared log help you stay informed about how OCD shows up at school.
+## Working with Teachers Day-to-Day
 
-### What NOT to Ask the School to Do
+### Ask Teachers To:
+- Give a brief, neutral redirect when they notice OCD behaviors: "I see you're stuck. Let's move on."
+- Not draw attention to OCD behaviors in front of peers
+- Celebrate effort and participation, not perfection
+- Communicate with you when they notice changes in OCD behaviors
 
-- Don't ask them to provide reassurance ("Tell my child everything is fine")
-- Don't ask them to eliminate all triggers (this reinforces avoidance)
-- Don't ask them to excuse your child from all challenging situations
+### Ask Teachers NOT To:
+- Punish OCD-driven behaviors (tardiness, incomplete work, refusal to participate)
+- Force the child to explain their behavior in front of classmates
+- Offer excessive reassurance
+- Assume a good day means OCD is "over"
+- Share the diagnosis without your permission
 
-The goal is support that helps your child function and practice facing fears — not a bubble that prevents all anxiety.`,
+## Coordinating with the Therapist
+
+The most effective approach involves a triangle of communication: **Parent, Therapist, School.** Ask your child's therapist if they can provide a letter for the school explaining OCD and recommended accommodations, participate in a school meeting, or advise the school on handling specific situations. Many therapists are willing to do this.
+
+## Peer Awareness
+
+- **Younger children (4-7):** Usually no explanation is needed
+- **Tweens (8-12):** Follow your child's lead about disclosure
+- **Teens (13-18):** Absolutely respect their wishes
+
+If your child wants peers to understand, work with the school counselor on an age-appropriate approach that doesn't single out your child.
+
+## If the School Pushes Back
+
+Most schools are cooperative, but if you encounter resistance:
+1. Put your requests in writing (email creates a record)
+2. Know your rights — Section 504 and IDEA are federal laws
+3. Request a formal evaluation if denied
+4. Contact your state's Parent Training and Information Center for free guidance
+5. Consider involving a parent advocate or educational attorney if necessary
+
+Your child has a legal right to accommodations that allow them to learn. Don't be afraid to advocate firmly.`,
     relatedSituationSlugs: ['wont-go-school-contamination', 'refuses-turn-in-work'],
   },
 
@@ -984,7 +1092,7 @@ The goal is support that helps your child function and practice facing fears —
   // Article 11: Self-Care for OCD Parents
   // -------------------------------------------------------------------------
   {
-    slug: 'self-care-parents',
+    slug: 'self-care-for-ocd-parents',
     title: 'Self-Care for OCD Parents',
     contentType: 'article',
     topic: 'self-care',
@@ -997,55 +1105,86 @@ The goal is support that helps your child function and practice facing fears —
       'Professional support for yourself is just as important as support for your child',
       'Small, consistent self-care habits matter more than occasional grand gestures',
     ],
-    body: `## You Matter Too
+    body: `## The Parent Nobody Checks On
 
-If you are parenting a child with OCD, you are likely exhausted, frustrated, and possibly grieving the "easy" childhood you imagined for your child. You may feel guilty for being tired, angry at the OCD, and helpless when nothing seems to work. All of these feelings are completely valid.
+When a child has OCD, virtually all the attention goes to the child — and rightly so. But somewhere in the background, there's a parent who is exhausted, worried, guilty, and often completely depleted. If that's you, this article is for you.
 
-### The Reality of OCD Parenting
+Parenting a child with OCD is profoundly demanding. You are managing your own emotions while managing your child's. You are holding boundaries while absorbing distress. You are learning about a condition you never expected to face. And you are doing all of this while handling everything else life throws at you.
 
-Parenting a child with OCD is uniquely demanding because:
+**You matter in this equation.** Not as an afterthought, but as a central figure.
 
-- **It is relentless.** OCD does not take days off. The rituals, the reassurance seeking, the meltdowns — they can happen any time
-- **It is isolating.** Other parents may not understand why bedtime takes an hour or why your child cannot eat at restaurants
-- **It creates conflict.** Partners may disagree about how to respond. Siblings may resent the attention OCD demands
-- **It triggers your own anxiety.** Watching your child suffer activates your protective instincts in ways that can be overwhelming
+## The Reality of Caregiver Burnout
 
-### Permission to Take Care of Yourself
+Research on parents of children with OCD consistently shows elevated rates of:
+- **Anxiety and depression** — often higher than in the general parent population
+- **Relationship strain** — disagreements about how to handle OCD, reduced quality time as a couple
+- **Social isolation** — embarrassment, schedule disruption, or simply not having energy for social life
+- **Physical health effects** — disrupted sleep, stress-related illness, neglecting personal healthcare
+- **Guilt** — constant questioning of whether you're doing enough or caused this
 
-You are not being selfish by prioritizing your own wellbeing. You are being strategic. Your child needs a calm, regulated, emotionally present parent — and you cannot be that if you are running on empty.
+If you recognize yourself here, you are not failing. You are a human being under extraordinary stress.
 
-### Practical Self-Care Strategies
+## Why Your Wellbeing Matters for Your Child
 
-**Daily micro-practices (5-10 minutes):**
-- A short walk outside, alone
-- Deep breathing before entering a stressful situation
-- Journaling three things that went well today (even small things)
-- A cup of tea in silence
+Your emotional state has a direct, measurable impact on your child's OCD:
 
-**Weekly recharging:**
-- One activity that is purely for you (exercise, hobby, friend)
-- A real conversation with someone who understands (partner, friend, support group)
-- Time away from the house if possible
+- **Children mirror parental anxiety.** If you're visibly stressed, your child's anxiety increases.
+- **Accommodation increases when you're depleted.** When you're exhausted, it's much harder to hold boundaries.
+- **Your emotional regulation models theirs.** How you handle stress teaches your child how to handle stress.
+- **Burnt-out parents disengage.** If you're running on empty, you have less capacity for the warmth, patience, and consistency that ERP support requires.
 
-**Ongoing support:**
-- Consider therapy for yourself — not because something is wrong with you, but because you are carrying a heavy load
-- Join a parent support group (IOCDF has excellent ones)
-- Read or listen to content about OCD parenting so you feel less alone
+Taking care of yourself is not selfish. It is one of the most important things you can do for your child.
 
-### Protecting Your Relationship
+## Practical Self-Care Strategies
 
-OCD can strain partnerships. Make time for your partner that is not about OCD. Even 15 minutes of connection per day — talking about something else, sharing a meal, watching a show together — can prevent the relationship from becoming all about managing the condition.
+### Daily (5-10 Minutes)
 
-### When You Need More Help
+- **Breathe intentionally.** Even 3 minutes of slow, deep breathing activates your parasympathetic nervous system. Try box breathing: inhale 4 counts, hold 4, exhale 4, hold 4.
+- **Move your body.** A 10-minute walk, a few stretches, dancing in the kitchen. Movement processes stress hormones.
+- **Put the phone down.** Stop Googling OCD for at least part of the day. Constant research can become its own anxiety spiral.
+- **Name your feelings.** Even just saying to yourself "I'm feeling overwhelmed right now" activates the prefrontal cortex and calms the amygdala.
+- **Do one small thing you enjoy.** Coffee in silence. A chapter of a book. A favorite song at full volume.
 
-If you are experiencing:
-- Persistent sadness or hopelessness
-- Difficulty sleeping or eating
-- Withdrawal from activities you used to enjoy
-- Anger that feels out of proportion
-- Thoughts of giving up
+### Weekly
 
-Please reach out to a mental health professional. You deserve support too.`,
+- **Connect with another adult** who isn't your child. Have a conversation that has nothing to do with OCD.
+- **Do something that is just for you.** Not for your child, not for your family, not for work.
+- **Check in with your partner** (if applicable). How are they doing? How are you doing together?
+- **Move more substantially.** A longer walk, a class, a sport.
+
+### Monthly
+
+- **See your own doctor.** Parents of children with OCD often neglect their own health appointments.
+- **Evaluate your stress load.** What can you delegate, defer, or drop entirely?
+- **Consider therapy for yourself.** A therapist experienced in caregiver stress can help you process complex emotions.
+
+## The Feelings You're Allowed to Have
+
+**Grief.** You may grieve the childhood you imagined for your child. That's valid.
+
+**Resentment.** You may occasionally resent the demands OCD places on your time and energy. That doesn't make you a bad parent.
+
+**Anger.** You may feel angry at OCD, at the situation, even at your child. Anger is a natural response to an unfair situation.
+
+**Guilt.** You may wonder if you caused this or are handling it wrong. For the record: you didn't cause this, and you're doing more than you give yourself credit for.
+
+**Hopelessness.** On the worst days, you may wonder if things will ever get better. They can and they do — but that doesn't make the dark moments less dark.
+
+All of these feelings are normal. None of them make you a bad parent.
+
+## Building Your Support System
+
+- **Your partner or co-parent:** Get on the same page. Read these articles together. Present a united front.
+- **Trusted friends or family:** Having people who know what you're dealing with and can offer a listening ear is invaluable.
+- **Parent support groups:** Connecting with other parents who truly understand is uniquely powerful. Check out our Community Forum.
+- **Your own therapist:** Even short-term therapy can provide tools for managing stress and processing difficult emotions.
+- **This platform:** The AI Coach is available 24/7, and the community is full of parents who get it.
+
+## A Reminder You Might Need Today
+
+You are doing something incredibly difficult with love, dedication, and courage. The fact that you're here, reading this, trying to learn and do better — that is an act of profound love. Give yourself credit for that.
+
+You don't have to be perfect. You just have to keep showing up.`,
     relatedSituationSlugs: [],
   },
 
@@ -1053,7 +1192,7 @@ Please reach out to a mental health professional. You deserve support too.`,
   // Article 12: What SSRIs Do for OCD
   // -------------------------------------------------------------------------
   {
-    slug: 'ssris-for-ocd',
+    slug: 'what-ssris-do-for-ocd',
     title: 'What SSRIs Do for OCD',
     contentType: 'article',
     topic: 'medication',
@@ -1066,67 +1205,91 @@ Please reach out to a mental health professional. You deserve support too.`,
       'It typically takes 4-12 weeks to see full effects',
       'Always work with a psychiatrist experienced in pediatric OCD',
     ],
-    body: `## Understanding Medication for OCD
+    body: `## Understanding Medication for Pediatric OCD
 
-If your child's OCD is moderate to severe, their treatment team may recommend medication alongside therapy. This can feel scary for parents. This article provides general information to help you have informed conversations with your child's doctor.
+The decision to consider medication for your child is deeply personal and often accompanied by strong feelings. This article provides general educational information about how SSRIs work for OCD in children. **This is not medical advice — all medication decisions should be made with your child's prescribing physician.**
 
-**Important: This is educational information only. Never start, stop, or change medication without guidance from your child's prescribing physician.**
+## What Are SSRIs?
 
-### How SSRIs Help OCD
+SSRI stands for **Selective Serotonin Reuptake Inhibitor.** SSRIs are a class of medications originally developed for depression but found to be highly effective for OCD as well. They are the only medications with FDA approval for treating OCD in children.
 
-Selective Serotonin Reuptake Inhibitors (SSRIs) work by increasing the availability of serotonin in the brain. Research suggests that OCD involves disruptions in serotonin signaling between certain brain regions. SSRIs help normalize this signaling, which can reduce the intensity and frequency of obsessions and compulsions.
+Several SSRIs have been studied in pediatric OCD, including fluoxetine, fluvoxamine, and sertraline. Your child's doctor will recommend the one they consider most appropriate.
 
-### What SSRIs Do and Don't Do
+## How They Work
 
-**SSRIs can:**
-- Reduce the intensity of obsessive thoughts
-- Lower overall anxiety levels
-- Make it easier for your child to engage in ERP therapy
-- Improve daily functioning
+In the brain, nerve cells communicate using chemical messengers called neurotransmitters. **Serotonin** is one of these, and it plays an important role in the brain circuits involved in OCD.
 
-**SSRIs cannot:**
-- Cure OCD
-- Eliminate all symptoms
-- Replace the need for therapy
-- Work immediately
+Normally, after serotonin delivers its message, it gets reabsorbed by the sending cell. SSRIs block this reabsorption, meaning more serotonin stays available. For OCD specifically, increased serotonin availability appears to help:
 
-### What to Expect
+- **Reduce the intensity of obsessive thoughts** — they still occur, but they feel less urgent
+- **Lower the compulsive urge** — the drive to perform rituals becomes easier to resist
+- **Calm the overactive threat-detection circuits** — the brain's alarm system becomes less reactive
 
-**Timeline:**
-- Weeks 1-2: Little to no change in OCD symptoms; some side effects may appear
-- Weeks 4-6: Gradual improvement may begin
-- Weeks 8-12: Full therapeutic effect typically reached
-- If no improvement by 12 weeks: doctor may adjust dose or try a different SSRI
+Think of it as turning down the volume on OCD. The thoughts may still play, but they're quieter and easier to ignore.
 
-**Common side effects** (usually mild and temporary):
-- Nausea or stomach upset
-- Headaches
-- Difficulty sleeping or drowsiness
+## What the Research Shows
+
+The evidence for SSRIs in pediatric OCD is substantial:
+- **SSRIs are significantly more effective than placebo** for reducing OCD symptoms in children and adolescents
+- **About 40-60% of children** show meaningful improvement with an SSRI alone
+- **The combination of SSRI plus ERP** is the most effective approach, especially for moderate to severe OCD
+- **ERP alone** is slightly more effective than an SSRI alone for mild to moderate OCD
+- For **severe OCD**, the combination approach is typically recommended first
+
+## What to Expect
+
+### Timeline
+SSRIs do not work immediately:
+- **Weeks 1-2:** Usually minimal change. Side effects (if any) may appear.
+- **Weeks 3-4:** Some families notice early improvement — slightly less intense obsessions.
+- **Weeks 6-8:** Fuller effect. This is when a meaningful assessment of effectiveness can be made.
+- **Weeks 8-12:** If helping, improvement often continues to build.
+
+**Patience is essential.** Don't conclude a medication isn't working before 8-12 weeks at an adequate dose.
+
+### Dosing
+OCD typically requires **higher doses of SSRIs than depression.** If your child's doctor starts low and gradually increases, this is standard. The starting dose is unlikely to be the therapeutic dose for OCD.
+
+### Common Side Effects
+Most are mild and often resolve within the first few weeks:
+- Stomach upset or nausea
+- Headache
+- Sleep changes
+- Mild changes in appetite
 - Restlessness
 
-Most side effects diminish within the first few weeks. Always report side effects to your child's doctor.
+### The Black Box Warning
+The FDA's "black box warning" about SSRIs and suicidal thinking in young people is important context:
+- Based on data showing a small increase in suicidal *thinking* (not completed suicide)
+- The actual risk is very low (about 2-4% vs 1-2% with placebo)
+- No completed suicides occurred in the pediatric trials
+- Untreated OCD is itself a risk factor for depression and suicidal thinking
+- Clinical consensus: benefits generally outweigh this risk
 
-### Medication + Therapy: Better Together
+**Monitoring during the first few weeks of treatment or dose changes is important.** Watch for mood changes, increased agitation, or any talk of self-harm.
 
-Research consistently shows that the combination of SSRIs and ERP therapy produces better outcomes than either treatment alone. Medication can "turn down the volume" on OCD, making it easier for your child to practice the skills they learn in ERP.
+## Common Parent Concerns
 
-### Questions to Ask Your Doctor
+### "Will medication change my child's personality?"
+SSRIs do not change personality. When they work, parents typically report their child seems "more like themselves" — freer, less burdened. If a medication causes significant personality changes or emotional blunting, discuss it with the prescriber.
 
-- What SSRI do you recommend and why?
-- What is the starting dose and how will we increase it?
-- What side effects should I watch for?
-- How long before we expect to see improvement?
-- What happens if this medication doesn't work?
-- How long will my child need to take this medication?
-- What does the process of stopping medication look like?
+### "Will they be on medication forever?"
+Not necessarily. Many children continue for 1-2 years after significant improvement, then gradually taper under medical supervision. Some do well after discontinuation; others benefit from longer-term use.
 
-### Common Parent Concerns
+### "Does medication mean ERP won't work?"
+No — SSRIs can make ERP *more* effective by reducing baseline anxiety enough for the child to engage with exposures. Think of it as taking the edge off so the real work becomes manageable.
 
-**"Am I failing by using medication?"** No. OCD is a neurobiological condition. Medication is a tool, just like glasses for vision or insulin for diabetes. Using it is not a failure — it is informed, evidence-based decision-making.
+### "I don't want to medicate my child."
+This is a valid feeling. For mild to moderate OCD, ERP alone is an excellent first-line treatment. If ERP alone isn't producing sufficient improvement, or if OCD is severe enough that your child can't engage in ERP, medication may be worth reconsidering.
 
-**"Will it change my child's personality?"** SSRIs should not change who your child is. If your child seems "flat" or unlike themselves, tell their doctor immediately — the dose or medication may need adjustment.
+## Working with Your Prescriber
 
-**"Is it safe for children?"** SSRIs have been extensively studied in pediatric populations. The FDA has approved certain SSRIs for use in children with OCD. Your doctor will monitor your child carefully.`,
+- **Ask questions.** Understand what is being prescribed, why, what to expect, and what to watch for.
+- **Report back.** Keep notes on changes you observe and share them at follow-up appointments.
+- **Don't adjust doses on your own.** Always consult the prescriber.
+- **Coordinate with the therapist.** The prescriber and ERP therapist should communicate.
+
+*This article is for educational purposes only. It does not constitute medical advice. Always consult your child's healthcare provider for decisions about medication.*`,
     relatedSituationSlugs: [],
   },
 
@@ -1134,7 +1297,7 @@ Research consistently shows that the combination of SSRIs and ERP therapy produc
   // Article 13: When to Seek Professional Help
   // -------------------------------------------------------------------------
   {
-    slug: 'when-to-seek-help',
+    slug: 'when-to-seek-professional-help',
     title: 'When to Seek Professional Help',
     contentType: 'article',
     topic: 'therapy',
@@ -1147,66 +1310,96 @@ Research consistently shows that the combination of SSRIs and ERP therapy produc
       'Earlier intervention leads to better outcomes',
       'You do not need a formal diagnosis to seek an evaluation',
     ],
-    body: `## Signs It's Time to Get Help
+    body: `## Do We Need a Professional?
 
-Every child has occasional worries, habits, or preferences. But when these behaviors begin to interfere with daily life, cause significant distress, or take up substantial time, it may be time to consult a professional.
+Many parents wonder whether their child's OCD is "bad enough" to warrant professional help. The short answer: **if OCD is causing regular distress or interfering with daily life, a professional evaluation is worthwhile.** You don't need to wait for things to get severe.
 
-### Red Flags to Watch For
+## Signs It's Time to Seek Help
 
-**Seek professional evaluation if your child:**
-- Spends more than 30 minutes per day on rituals or compulsions
-- Avoids school, social activities, or family outings because of anxiety
-- Has physical symptoms from compulsions (raw hands, hair loss, sleep deprivation)
-- Is falling behind in school due to perfectionism or avoidance
-- Seems constantly distressed, anxious, or tearful
-- Involves the whole family in rituals or demands accommodations
-- Expresses shame, self-hatred, or hopelessness about their behaviors
+### Definite Red Flags
 
-**Seek urgent help if your child:**
-- Expresses thoughts of self-harm
-- Is unable to eat, sleep, or function
-- Is in extreme distress that does not resolve
+Seek professional help soon if:
+- **OCD behaviors take up more than 30-60 minutes per day** (combined total of all rituals, avoidance, and reassurance seeking)
+- **Your child is significantly distressed** — crying, meltdowns, anger, visible suffering
+- **Daily functioning is impaired** — difficulty at school, avoiding activities, unable to complete basic routines
+- **OCD is spreading** — new themes, new rituals, increasing avoidance
+- **Family life is significantly disrupted** — routines are heavily modified, siblings are affected
+- **Your child has stopped doing things they enjoy** because of OCD
+- **You're spending significant time accommodating** OCD behaviors
 
-### Finding the Right Therapist
+### Urgent Situations
 
-Not all therapists are trained in OCD treatment. The gold standard is **Exposure and Response Prevention (ERP)**, a specific form of Cognitive Behavioral Therapy.
+Seek help immediately if:
+- Your child expresses hopelessness or mentions self-harm
+- Your child's physical health is affected (skin damage, sleep deprivation, not eating)
+- OCD is causing severe school refusal
+- Your child becomes aggressive when rituals are disrupted
+- You notice symptoms of depression alongside OCD
 
-**What to look for:**
-- Specific training in ERP (not just general CBT)
-- Experience with pediatric OCD
-- Willingness to involve parents in treatment
-- A collaborative, warm approach
+## Finding the Right Therapist
 
-**Where to search:**
-- IOCDF (International OCD Foundation) therapist directory
-- Our Professional Directory
-- Your pediatrician's referrals
-- Your insurance provider's specialist list
+This is critical: **not all therapists are qualified to treat OCD.** OCD requires specific training in Exposure and Response Prevention (ERP), and many general therapists have little experience with this approach. Seeing the wrong therapist can mean months of ineffective treatment.
+
+### What to Look For
+- **ERP training and experience** — this is non-negotiable. Ask directly: "Do you use ERP? How many children with OCD have you treated?"
+- **Specialization in OCD or anxiety** — a therapist who lists OCD among 30 specialties is likely a generalist
+- **Experience with children/adolescents** — pediatric OCD requires different skills than adult OCD
+- **Licensed professional** — Psychologist, LCSW, LPC, or psychiatrist
+- **Good fit with your child** — the therapeutic relationship matters enormously
+
+### Where to Search
+- **IOCDF Therapist Directory** (iocdf.org) — the best starting point
+- **Psychology Today Directory** — filter by OCD and ERP
+- **Our Professional Directory** on this platform
+- **Your child's pediatrician** — ask specifically for an OCD/ERP referral
+- **University-based OCD clinics** — often provide evidence-based care with sliding-scale fees
 
 ### Questions to Ask a Potential Therapist
 
-- "What is your experience treating OCD in children?"
-- "Do you use ERP? How do you structure it?"
-- "How do you involve parents in treatment?"
-- "What does a typical session look like?"
-- "How will we measure progress?"
+1. "What percentage of your caseload involves OCD?"
+2. "Do you use ERP as your primary approach?"
+3. "How do you involve parents in treatment?"
+4. "How many sessions does treatment typically take?"
+5. "Do you do exposures during session, or mainly talk therapy?"
 
-### What to Expect from Treatment
+A good OCD therapist will welcome these questions.
 
-- **Assessment:** 1-2 sessions to understand your child's OCD
-- **Education:** Learning about OCD and how ERP works
-- **Exposure hierarchy:** Building a ladder of fears from least to most anxiety-provoking
-- **Graduated exposures:** Practicing facing fears without compulsions
-- **Home practice:** Exercises between sessions (this is where parent support is crucial)
-- **Maintenance:** Learning to manage OCD long-term
+### Red Flags in a Therapist
+- Uses mainly talk therapy without structured exposures
+- Focuses on finding the "root cause" through extensive childhood exploration
+- Has little specific ERP training
+- Offers reassurance during sessions instead of encouraging uncertainty tolerance
+- Does not involve parents in treatment planning
 
-### Overcoming Barriers
+## What to Expect from Treatment
 
-**"My child refuses to go."** Many children resist therapy initially. Frame it as "learning skills to boss back the worry bully," not as something being wrong with them.
+### Initial Assessment (1-2 Sessions)
+The therapist will interview you and your child about symptoms, history, and impact. They'll use standardized measures to assess severity and discuss the treatment plan.
 
-**"We can't afford it."** Check if your insurance covers OCD treatment. Many therapists offer sliding scales. IOCDF offers resources for finding affordable care.
+### Active Treatment (12-20 Sessions, Typically Weekly)
+- Education about OCD and ERP
+- Building an exposure hierarchy
+- Gradual exposures during sessions and as homework
+- Parent sessions for accommodation reduction and home support
+- Ongoing reassessment
 
-**"There are no specialists near us."** Telehealth has dramatically expanded access to OCD specialists. Many excellent therapists now offer virtual ERP sessions.`,
+### Maintenance and Relapse Prevention
+- Spacing out sessions gradually
+- Developing a plan for future flare-ups
+- Building independent coping skills
+
+## The Cost Question
+
+Therapy is an investment. Some strategies for managing cost:
+- Check insurance coverage — many plans cover outpatient mental health
+- Ask about sliding scale fees
+- Consider university training clinics (lower cost, supervised by experts)
+- Intensive programs may be more cost-effective for severe cases
+- Some therapists offer parent-only coaching, which can be effective even without direct child sessions
+
+## Don't Wait
+
+The most common regret parents share is: **"I wish we had sought help sooner."** Early intervention leads to faster recovery, prevents OCD from becoming entrenched, and reduces impact on development, education, and self-esteem. If you're on the fence, get an evaluation. Either you'll learn things are manageable with home strategies, or you'll get connected with help your child needs.`,
     relatedSituationSlugs: ['hour-long-showers', 'wont-go-school-contamination'],
   },
 
@@ -1214,7 +1407,7 @@ Not all therapists are trained in OCD treatment. The gold standard is **Exposure
   // Article 14: Helping Siblings Understand OCD
   // -------------------------------------------------------------------------
   {
-    slug: 'helping-siblings',
+    slug: 'helping-siblings-understand-ocd',
     title: 'Helping Siblings Understand OCD',
     contentType: 'article',
     topic: 'siblings',
@@ -1279,7 +1472,7 @@ Consider individual therapy or a siblings support group if these signs persist.`
   // Article 15: Contamination OCD Deep Dive
   // -------------------------------------------------------------------------
   {
-    slug: 'contamination-deep-dive',
+    slug: 'contamination-ocd-deep-dive',
     title: 'Contamination OCD: A Deep Dive',
     contentType: 'article',
     topic: 'subtypes',
@@ -1350,7 +1543,7 @@ ERP for contamination involves gradually exposing your child to feared contamina
   // Article 16: Intrusive Thoughts Guide
   // -------------------------------------------------------------------------
   {
-    slug: 'intrusive-thoughts-guide',
+    slug: 'intrusive-thoughts-parents-guide',
     title: 'Intrusive Thoughts: What Parents Need to Know',
     contentType: 'article',
     topic: 'subtypes',
@@ -1578,7 +1771,7 @@ While understanding the ERP ladder helps you support your child's treatment, **b
   // Article 19: Reassurance Seeking — Breaking the Cycle
   // -------------------------------------------------------------------------
   {
-    slug: 'reassurance-breaking-cycle',
+    slug: 'reassurance-seeking-breaking-the-cycle',
     title: 'Reassurance Seeking: Breaking the Cycle',
     contentType: 'article',
     topic: 'strategies',
@@ -1660,7 +1853,7 @@ When you first reduce reassurance, your child's anxiety will temporarily increas
   // Article 20: Success Stories
   // -------------------------------------------------------------------------
   {
-    slug: 'success-stories',
+    slug: 'success-stories-it-gets-better',
     title: 'Success Stories: It Gets Better',
     contentType: 'article',
     topic: 'basics',
@@ -1726,39 +1919,39 @@ If you are reading this from the dark middle of your family's OCD journey, pleas
 
 export const learningPaths: LearningPath[] = [
   {
-    slug: 'just-learned',
+    slug: 'just-learned-my-child-has-ocd',
     title: 'Just Learned My Child Has OCD',
     description: 'A gentle 5-part introduction to understanding OCD and taking your first steps.',
     estimatedMinutes: 45,
-    contentSlugs: ['understanding-ocd', 'ocd-vs-anxiety', 'accommodation-cycle', 'when-to-seek-help', 'self-care-parents'],
+    contentSlugs: ['understanding-ocd-in-children', 'ocd-vs-anxiety', 'the-accommodation-cycle', 'when-to-seek-professional-help', 'self-care-for-ocd-parents'],
   },
   {
-    slug: 'starting-erp',
+    slug: 'starting-erp-at-home',
     title: 'Starting ERP at Home',
     description: 'Learn how to support Exposure and Response Prevention in everyday life.',
     estimatedMinutes: 90,
-    contentSlugs: ['understanding-ocd', 'erp-explained', 'supporting-erp-at-home', 'building-erp-ladder', 'stop-accommodating', 'bedtime-strategies', 'reassurance-breaking-cycle', 'self-care-parents'],
+    contentSlugs: ['understanding-ocd-in-children', 'erp-explained', 'supporting-erp-at-home', 'building-erp-ladder', 'how-to-stop-accommodating', 'bedtime-strategies', 'reassurance-seeking-breaking-the-cycle', 'self-care-for-ocd-parents'],
   },
   {
     slug: 'reducing-accommodation',
     title: 'Reducing Accommodation',
     description: 'Gradually shift from accommodating OCD to empowering your child.',
     estimatedMinutes: 60,
-    contentSlugs: ['accommodation-cycle', 'stop-accommodating', 'reassurance-breaking-cycle', 'supporting-erp-at-home', 'helping-siblings', 'self-care-parents'],
+    contentSlugs: ['the-accommodation-cycle', 'how-to-stop-accommodating', 'reassurance-seeking-breaking-the-cycle', 'supporting-erp-at-home', 'helping-siblings-understand-ocd', 'self-care-for-ocd-parents'],
   },
   {
-    slug: 'preparing-for-therapy',
+    slug: 'preparing-for-a-therapist-visit',
     title: 'Preparing for a Therapist Visit',
     description: 'What to know, ask, and how to make the most of professional help.',
     estimatedMinutes: 25,
-    contentSlugs: ['when-to-seek-help', 'erp-explained', 'ssris-for-ocd'],
+    contentSlugs: ['when-to-seek-professional-help', 'erp-explained', 'what-ssris-do-for-ocd'],
   },
   {
-    slug: 'supporting-teenager',
+    slug: 'supporting-a-teenager-with-ocd',
     title: 'Supporting a Teenager with OCD',
     description: 'Age-appropriate strategies for navigating OCD with older children.',
     estimatedMinutes: 60,
-    contentSlugs: ['ocd-teenagers', 'erp-explained', 'reassurance-breaking-cycle', 'talking-to-school', 'self-care-parents', 'success-stories'],
+    contentSlugs: ['ocd-in-teenagers', 'erp-explained', 'reassurance-seeking-breaking-the-cycle', 'talking-to-school-about-ocd', 'self-care-for-ocd-parents', 'success-stories-it-gets-better'],
   },
 ];
 

@@ -1,8 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+export const runtime = "nodejs";
+export const maxDuration = 60;
 
 const SYSTEM_PROMPT = `You are the OCD Parent Coach, an AI assistant designed to help parents and caregivers of children with OCD. You provide evidence-based guidance rooted in Exposure and Response Prevention (ERP) and Cognitive Behavioral Therapy (CBT) principles.
 
@@ -40,28 +39,11 @@ const SYSTEM_PROMPT = `You are the OCD Parent Coach, an AI assistant designed to
 - When providing substantial guidance, include: "I'm an AI coach, not a therapist. For personalized clinical guidance, please consult a mental health professional specializing in OCD."`;
 
 const CRISIS_KEYWORDS = [
-  "suicide",
-  "kill myself",
-  "kill themselves",
-  "kill herself",
-  "kill himself",
-  "end it all",
-  "want to die",
-  "wants to die",
-  "hurt myself",
-  "hurt themselves",
-  "hurt herself",
-  "hurt himself",
-  "self-harm",
-  "self harm",
-  "cutting",
-  "can't go on",
-  "no way out",
-  "everyone would be better off",
-  "what's the point",
-  "give up on life",
-  "hit my child",
-  "locked them in",
+  "suicide", "kill myself", "kill themselves", "kill herself", "kill himself",
+  "end it all", "want to die", "wants to die", "hurt myself", "hurt themselves",
+  "hurt herself", "hurt himself", "self-harm", "self harm", "cutting",
+  "can't go on", "no way out", "everyone would be better off",
+  "what's the point", "give up on life", "hit my child", "locked them in",
   "hurting my child",
 ];
 
@@ -86,6 +68,15 @@ function containsCrisisLanguage(text: string): boolean {
 }
 
 export async function POST(request: Request) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+
+  if (!apiKey) {
+    return new Response(
+      JSON.stringify({ error: "ANTHROPIC_API_KEY is not configured. Please add it to your environment variables." }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
+  }
+
   try {
     const { messages } = (await request.json()) as {
       messages: Array<{ role: "user" | "assistant"; content: string }>;
@@ -98,7 +89,8 @@ export async function POST(request: Request) {
       });
     }
 
-    // Check the latest user message for crisis language
+    const anthropic = new Anthropic({ apiKey });
+
     const lastUserMessage = [...messages]
       .reverse()
       .find((m) => m.role === "user");
@@ -120,7 +112,6 @@ export async function POST(request: Request) {
 
     const readableStream = new ReadableStream({
       async start(controller) {
-        // If crisis detected, send emergency preamble first
         if (isCrisis) {
           controller.enqueue(
             encoder.encode(`data: ${JSON.stringify({ text: EMERGENCY_PREAMBLE })}\n\n`)
@@ -133,9 +124,8 @@ export async function POST(request: Request) {
               event.type === "content_block_delta" &&
               event.delta.type === "text_delta"
             ) {
-              const chunk = event.delta.text;
               controller.enqueue(
-                encoder.encode(`data: ${JSON.stringify({ text: chunk })}\n\n`)
+                encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`)
               );
             }
           }
@@ -145,9 +135,7 @@ export async function POST(request: Request) {
           const errorMessage =
             err instanceof Error ? err.message : "Stream error";
           controller.enqueue(
-            encoder.encode(
-              `data: ${JSON.stringify({ error: errorMessage })}\n\n`
-            )
+            encoder.encode(`data: ${JSON.stringify({ error: errorMessage })}\n\n`)
           );
           controller.close();
         }
@@ -157,8 +145,9 @@ export async function POST(request: Request) {
     return new Response(readableStream, {
       headers: {
         "Content-Type": "text/event-stream",
-        "Cache-Control": "no-cache",
+        "Cache-Control": "no-cache, no-transform",
         Connection: "keep-alive",
+        "X-Accel-Buffering": "no",
       },
     });
   } catch (err) {

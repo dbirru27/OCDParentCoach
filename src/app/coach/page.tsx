@@ -164,10 +164,16 @@ export default function CoachPage() {
         });
 
         if (!response.ok) {
-          const errData = await response.json().catch(() => ({}));
-          throw new Error(
-            (errData as { error?: string }).error || `HTTP ${response.status}`
-          );
+          let errorMsg = `HTTP ${response.status}`;
+          try {
+            const errData = await response.json();
+            if (errData && typeof errData === "object" && "error" in errData) {
+              errorMsg = (errData as { error: string }).error;
+            }
+          } catch {
+            // response wasn't JSON
+          }
+          throw new Error(errorMsg);
         }
 
         const reader = response.body?.getReader();
