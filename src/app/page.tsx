@@ -153,13 +153,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Stats */}
+      <section className="px-4 py-12 bg-sage/5">
+        <div className="mx-auto max-w-4xl grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+          {[
+            { value: "49", label: "Situation Guides" },
+            { value: "20", label: "Learning Articles" },
+            { value: "12", label: "OCD Categories" },
+            { value: "24/7", label: "AI Coach Access" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <p className="font-serif text-3xl sm:text-4xl font-bold text-sage-dark">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-sm text-charcoal/60">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="px-4 py-16 bg-white">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-navy">
             What Parents Are Saying
           </h2>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
             <blockquote className="rounded-2xl bg-cream p-6 text-left">
               <p className="text-charcoal/70 italic leading-relaxed">
                 &ldquo;I finally understood why my responses were making it
@@ -176,6 +195,15 @@ export default function HomePage() {
               </p>
               <footer className="mt-4 text-sm text-charcoal/50">
                 &mdash; Parent of a 7-year-old
+              </footer>
+            </blockquote>
+            <blockquote className="rounded-2xl bg-cream p-6 text-left">
+              <p className="text-charcoal/70 italic leading-relaxed">
+                &ldquo;The Situation Library helped me handle a meltdown for the
+                first time without accommodating. Small win, huge moment.&rdquo;
+              </p>
+              <footer className="mt-4 text-sm text-charcoal/50">
+                &mdash; Parent of a 12-year-old
               </footer>
             </blockquote>
           </div>
