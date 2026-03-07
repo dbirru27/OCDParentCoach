@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Phone, MessageCircle, AlertTriangle, Heart } from "lucide-react";
+import { GlossaryTerm } from "@/components/info-tooltip";
+import { glossary } from "@/lib/glossary";
 
 export const metadata: Metadata = {
   title: "Emergency Resources",
@@ -53,7 +55,7 @@ export default function EmergencyPage() {
             <Heart className="h-8 w-8 text-sage" />
             <div>
               <h2 className="font-serif text-xl font-semibold text-charcoal">
-                IOCDF Resources
+                <GlossaryTerm term="IOCDF" definition={glossary.IOCDF}>IOCDF</GlossaryTerm> Resources
               </h2>
               <p className="mt-1 text-sm text-charcoal/60">
                 International OCD Foundation crisis resources

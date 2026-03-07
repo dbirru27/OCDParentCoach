@@ -7,48 +7,50 @@ import {
   GraduationCap,
   Users,
 } from "lucide-react";
+import { GlossaryTerm } from "@/components/info-tooltip";
+import { glossary } from "@/lib/glossary";
 
 const features = [
   {
     icon: MessageCircle,
     title: "AI Coach",
-    description:
-      "Get 24/7 guidance from our AI coach trained in ERP and CBT strategies for childhood OCD.",
+    description: (
+      <>
+        Get 24/7 guidance from our AI coach trained in{" "}
+        <GlossaryTerm term="ERP" definition={glossary.ERP}>ERP</GlossaryTerm> and{" "}
+        <GlossaryTerm term="CBT" definition={glossary.CBT}>CBT</GlossaryTerm> strategies for childhood OCD.
+      </>
+    ),
     href: "/coach",
   },
   {
     icon: ClipboardCheck,
     title: "OCD IQ Test",
-    description:
-      "Understand your child's OCD patterns with our evidence-based screening tool.",
+    description: "Understand your child's OCD patterns with our evidence-based screening tool.",
     href: "/assessment",
   },
   {
     icon: BookOpen,
     title: "Situation Library",
-    description:
-      "Browse real scenarios with step-by-step strategies you can try tonight.",
+    description: "Browse real scenarios with step-by-step strategies you can try tonight.",
     href: "/situations",
   },
   {
     icon: BarChart3,
     title: "Progress Tracker",
-    description:
-      "Log episodes, track patterns, and see your family's progress over time.",
+    description: "Log episodes, track patterns, and see your family's progress over time.",
     href: "/tracker",
   },
   {
     icon: GraduationCap,
     title: "Learning Hub",
-    description:
-      "Articles, videos, and guided paths to deepen your understanding of OCD.",
+    description: "Articles, videos, and guided paths to deepen your understanding of OCD.",
     href: "/learn",
   },
   {
     icon: Users,
     title: "Community",
-    description:
-      "Connect with other parents who understand. Share wins, ask questions, find support.",
+    description: "Connect with other parents who understand. Share wins, ask questions, find support.",
     href: "/community",
   },
 ];

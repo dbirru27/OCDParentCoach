@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { InfoTooltip } from "@/components/info-tooltip";
+import { glossary } from "@/lib/glossary";
 
 export const metadata: Metadata = {
   title: "Learning Paths",
@@ -17,7 +19,8 @@ const paths = [
   {
     slug: "starting-erp",
     title: "Starting ERP at Home",
-    description: "Learn how to support Exposure and Response Prevention in everyday life.",
+    description: "Learn how to support Exposure and Response Prevention (ERP) in everyday life.",
+    tooltip: { term: "ERP", definition: glossary.ERP },
     parts: 8,
     time: "1.5 hours",
   },
@@ -25,6 +28,7 @@ const paths = [
     slug: "reducing-accommodation",
     title: "Reducing Accommodation",
     description: "Gradually shift from accommodating OCD to empowering your child.",
+    tooltip: { term: "Accommodation", definition: glossary.accommodation },
     parts: 6,
     time: "1 hour",
   },
@@ -57,19 +61,25 @@ export default function LearningPathsPage() {
 
         <div className="mt-12 space-y-5">
           {paths.map((path) => (
-            <Link
-              key={path.slug}
-              href={`/learn/paths/${path.slug}`}
-              className="group block rounded-2xl border border-cream-dark bg-white p-6 shadow-sm hover:shadow-md hover:border-sage/30 transition-all"
-            >
-              <h2 className="font-serif text-xl font-semibold text-charcoal group-hover:text-sage-dark transition-colors">
-                {path.title}
-              </h2>
-              <p className="mt-2 text-sm text-charcoal/60">{path.description}</p>
-              <p className="mt-3 text-xs text-charcoal/40">
-                {path.parts} parts &middot; {path.time}
-              </p>
-            </Link>
+            <div key={path.slug} className="group rounded-2xl border border-cream-dark bg-white p-6 shadow-sm hover:shadow-md hover:border-sage/30 transition-all">
+              <Link
+                href={`/learn/paths/${path.slug}`}
+                className="block"
+              >
+                <div className="flex items-center gap-2">
+                  <h2 className="font-serif text-xl font-semibold text-charcoal group-hover:text-sage-dark transition-colors">
+                    {path.title}
+                  </h2>
+                  {"tooltip" in path && path.tooltip && (
+                    <InfoTooltip text={`${path.tooltip.term}: ${path.tooltip.definition}`} />
+                  )}
+                </div>
+                <p className="mt-2 text-sm text-charcoal/60">{path.description}</p>
+                <p className="mt-3 text-xs text-charcoal/40">
+                  {path.parts} parts &middot; {path.time}
+                </p>
+              </Link>
+            </div>
           ))}
         </div>
       </div>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { MessageCircle, Mic, Send, Plus, Search } from "lucide-react";
+import { InfoTooltip } from "@/components/info-tooltip";
+import { glossary } from "@/lib/glossary";
 
 export const metadata: Metadata = {
   title: "AI Parent Coach",
@@ -8,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const quickPrompts = [
-  "My child won't stop checking things",
-  "Bedtime is a nightmare",
-  "How do I stop accommodating?",
-  "Explain ERP to me",
+  { text: "My child won't stop checking things", tooltip: null },
+  { text: "Bedtime is a nightmare", tooltip: null },
+  { text: "How do I stop accommodating?", tooltip: { term: "Accommodation", definition: glossary.accommodation } },
+  { text: "Explain ERP to me", tooltip: { term: "ERP", definition: glossary.ERP } },
 ];
 
 export default function CoachPage() {
@@ -76,12 +78,16 @@ export default function CoachPage() {
             {/* Quick prompts */}
             <div className="mt-8 flex flex-wrap gap-2">
               {quickPrompts.map((prompt) => (
-                <button
-                  key={prompt}
-                  className="rounded-full border border-sage/30 bg-sage/5 px-4 py-2 text-sm text-sage-dark hover:bg-sage/10 transition-colors"
-                >
-                  {prompt}
-                </button>
+                <span key={prompt.text} className="inline-flex items-center gap-1">
+                  <button
+                    className="rounded-full border border-sage/30 bg-sage/5 px-4 py-2 text-sm text-sage-dark hover:bg-sage/10 transition-colors"
+                  >
+                    {prompt.text}
+                  </button>
+                  {prompt.tooltip && (
+                    <InfoTooltip text={`${prompt.tooltip.term}: ${prompt.tooltip.definition}`} />
+                  )}
+                </span>
               ))}
             </div>
           </div>

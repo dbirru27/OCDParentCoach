@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GlossaryTerm } from "@/components/info-tooltip";
+import { glossary } from "@/lib/glossary";
 
 export const metadata: Metadata = {
   title: "Learning Hub",
@@ -76,6 +78,17 @@ export default function LearnPage() {
             <option>Videos</option>
             <option>Worksheets</option>
           </select>
+        </div>
+
+        {/* Key terms */}
+        <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl bg-navy/5 px-5 py-3 text-sm text-charcoal/60">
+          <span className="text-xs font-medium text-charcoal/40 uppercase">Key terms:</span>
+          <GlossaryTerm term="ERP" definition={glossary.ERP}>ERP</GlossaryTerm>
+          <GlossaryTerm term="CBT" definition={glossary.CBT}>CBT</GlossaryTerm>
+          <GlossaryTerm term="Accommodation" definition={glossary.accommodation}>Accommodation</GlossaryTerm>
+          <GlossaryTerm term="SSRI" definition={glossary.SSRI}>SSRI</GlossaryTerm>
+          <GlossaryTerm term="504 Plan" definition={glossary["504 plan"]}>504 Plan</GlossaryTerm>
+          <GlossaryTerm term="IEP" definition={glossary.IEP}>IEP</GlossaryTerm>
         </div>
 
         {/* Content grid */}

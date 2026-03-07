@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GlossaryTerm } from "@/components/info-tooltip";
+import { glossary } from "@/lib/glossary";
 
 export const metadata: Metadata = {
   title: "Parent Response Style Quiz",
@@ -25,8 +27,9 @@ export default function ParentAssessmentPage() {
         {/* Question */}
         <div className="rounded-2xl border border-cream-dark bg-white p-8 shadow-sm">
           <h2 className="font-serif text-xl font-semibold text-charcoal leading-relaxed">
-            When your child asks you for reassurance about something
-            OCD-related, how do you typically respond?
+            When your child asks you for{" "}
+            <GlossaryTerm term="Reassurance" definition={glossary.reassurance}>reassurance</GlossaryTerm>{" "}
+            about something OCD-related, how do you typically respond?
           </h2>
 
           <div className="mt-8 space-y-3">

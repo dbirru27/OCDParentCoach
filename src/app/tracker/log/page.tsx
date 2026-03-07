@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { InfoTooltip } from "@/components/info-tooltip";
+import { glossary } from "@/lib/glossary";
 
 export const metadata: Metadata = {
   title: "Log Entry",
@@ -94,7 +96,10 @@ export default function LogEntryPage() {
 
           {/* Your Response */}
           <div>
-            <label className="block text-sm font-medium text-charcoal/70">Your Response</label>
+            <div className="flex items-center gap-2">
+              <label className="block text-sm font-medium text-charcoal/70">Your Response</label>
+              <InfoTooltip text="How did you respond to the OCD behavior? Accommodated = helped complete a ritual or avoid a trigger. Reassured = provided verbal reassurance. Redirected = shifted attention. Used ERP = encouraged facing the fear without doing the ritual." />
+            </div>
             <select className="mt-1 w-full rounded-xl border border-cream-dark bg-white px-4 py-3 text-sm outline-none focus:border-sage focus:ring-2 focus:ring-sage/20">
               <option>Select response type...</option>
               <option>Accommodated</option>

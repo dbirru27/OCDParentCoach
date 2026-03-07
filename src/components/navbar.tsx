@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "/coach", label: "Coach" },
+  { href: "/coach", label: "AI Coach" },
   { href: "/assessment", label: "Assessment" },
   { href: "/situations", label: "Situations" },
   { href: "/learn", label: "Learn" },

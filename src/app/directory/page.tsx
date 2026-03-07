@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Search, MapPin, Filter } from "lucide-react";
+import { GlossaryTerm } from "@/components/info-tooltip";
+import { glossary } from "@/lib/glossary";
 
 export const metadata: Metadata = {
   title: "Professional Directory",
@@ -82,7 +84,11 @@ export default function DirectoryPage() {
                     <h3 className="font-serif font-semibold text-charcoal">
                       Dr. Example Therapist
                     </h3>
-                    <p className="text-sm text-charcoal/50">PsyD &middot; ERP, CBT</p>
+                    <p className="text-sm text-charcoal/50">
+                      PsyD &middot;{" "}
+                      <GlossaryTerm term="ERP" definition={glossary.ERP}>ERP</GlossaryTerm>,{" "}
+                      <GlossaryTerm term="CBT" definition={glossary.CBT}>CBT</GlossaryTerm>
+                    </p>
                     <p className="mt-1 text-sm text-charcoal/50">
                       <MapPin className="inline h-3 w-3 mr-1" />
                       City, State
