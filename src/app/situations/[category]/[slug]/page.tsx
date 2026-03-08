@@ -114,6 +114,38 @@ export default async function SituationPage({
           ))}
         </section>
 
+        {/* Age-Specific Examples */}
+        {situation.ageSpecificExamples && situation.ageSpecificExamples.length > 0 && (
+          <section className="mt-10">
+            <h2 className="font-serif text-xl font-semibold text-charcoal">
+              How This Looks by Age
+            </h2>
+            <div className="mt-4 space-y-4">
+              {situation.ageSpecificExamples.map((ex) => (
+                <div
+                  key={ex.ageRange}
+                  className="rounded-xl border border-cream-dark bg-white p-5 shadow-sm"
+                >
+                  <span className="inline-block rounded-full bg-navy/5 px-3 py-0.5 text-xs font-semibold text-navy/70 mb-3">
+                    Ages {ex.ageRange}
+                  </span>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">
+                    {ex.description}
+                  </p>
+                  <div className="mt-3 rounded-lg bg-sage/5 border-l-4 border-sage px-4 py-3">
+                    <p className="text-xs font-medium text-sage-dark mb-1">
+                      You might say:
+                    </p>
+                    <p className="text-sm italic text-charcoal/70 leading-relaxed">
+                      &ldquo;{ex.parentScript}&rdquo;
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* What NOT to Do */}
         <section className="mt-10">
           <h2 className="font-serif text-xl font-semibold text-coral">

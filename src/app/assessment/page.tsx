@@ -26,12 +26,11 @@ export default function AssessmentPage() {
               Child OCD Screening
             </h2>
             <p className="mt-3 text-sm text-charcoal/60 leading-relaxed">
-              Understand your child&apos;s OCD patterns and severity across
-              multiple domains.
+              Understand OCD patterns and severity across multiple domains —
+              tailored to your child&apos;s age group (4-7, 8-12, 13-18, or 18+).
             </p>
             <div className="mt-4 space-y-1 text-xs text-charcoal/50">
-              <p>~8 minutes</p>
-              <p>25-35 questions</p>
+              <p>~8 minutes &middot; 30 age-appropriate questions</p>
             </div>
             <Link
               href="/assessment/child"
@@ -50,12 +49,11 @@ export default function AssessmentPage() {
               Parent Response Style Quiz
             </h2>
             <p className="mt-3 text-sm text-charcoal/60 leading-relaxed">
-              Discover how your reactions affect your child&apos;s OCD and learn
-              to shift toward coaching.
+              Discover how your reactions affect OCD and learn to shift
+              toward coaching — with scenarios matched to your child&apos;s age.
             </p>
             <div className="mt-4 space-y-1 text-xs text-charcoal/50">
-              <p>~5 minutes</p>
-              <p>15-20 questions</p>
+              <p>~5 minutes &middot; 18 age-appropriate scenarios</p>
             </div>
             <Link
               href="/assessment/parent"
@@ -69,8 +67,9 @@ export default function AssessmentPage() {
         {/* Disclaimer */}
         <div className="mt-10 rounded-xl bg-navy/5 p-5 text-center">
           <p className="text-sm text-charcoal/60 leading-relaxed">
-            These are awareness tools, not clinical diagnoses. Results can guide
-            conversation with your child&apos;s healthcare provider.
+            These are awareness tools, not clinical diagnoses. Both assessments
+            adapt to your child&apos;s age group — from young children to adult children
+            living at home. Results can guide conversation with a healthcare provider.
           </p>
         </div>
 

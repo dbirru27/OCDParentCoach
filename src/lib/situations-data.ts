@@ -18,6 +18,12 @@ export interface Strategy {
   exampleScript: string;
 }
 
+export interface AgeSpecificExample {
+  ageRange: AgeRange;
+  description: string;
+  parentScript: string;
+}
+
 export interface Situation {
   slug: string;
   title: string;
@@ -30,6 +36,7 @@ export interface Situation {
   strategies: Strategy[];
   whenItGetsTough: string;
   whenToGetHelp: string[];
+  ageSpecificExamples: AgeSpecificExample[];
   relatedSituationSlugs: string[];
 }
 
@@ -163,6 +170,29 @@ export const situations: Situation[] = [
       "The washing rituals are spreading — now including arms, face, or full-body washing",
       "Your child is expressing hopelessness, saying things like \"I can't stop\" or \"I hate my brain\"",
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your preschooler or early-elementary child insists on washing hands after touching pets, playground equipment, or other children. They may cry or tantrum if you try to limit washing. Their small hands are visibly red and chapped, and they may resist holding your hand because theirs hurt.",
+        parentScript:
+          "I can see the Worry Monster is telling you your hands are dirty. Let's tell the Worry Monster we're only going to wash for the time it takes to sing 'Happy Birthday' once. I'll sing it with you.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child washes hands between every class change at school, refuses to use school bathrooms that aren't 'clean enough,' and may be coming home with cracked, bleeding knuckles. Friends have started to notice and ask questions. They may resist hand cream because it feels 'contaminated.' Homework gets delayed because they wash before and after touching each school supply.",
+        parentScript:
+          "I notice your hands are really hurting. OCD is being a bully about this. What if we tried using soap just twice -- once before eating and once after the bathroom -- and see what happens? I know that sounds scary, but I think you're tougher than OCD thinks.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen uses hand sanitizer obsessively, keeps antibacterial wipes in their backpack, and may be washing hands in the school bathroom between every class. They might hide the damage with long sleeves or gloves. Their showers may take 45+ minutes. They avoid holding hands with a boyfriend or girlfriend, and may skip lunch to avoid touching cafeteria surfaces.",
+        parentScript:
+          "I've noticed you're going through a lot of sanitizer and your hands look painful. I'm not judging -- I know OCD makes this feel necessary. Can we talk about what your therapist might suggest as a first step? I want to help, but only in ways that actually help you get better.",
+      },
+    ],
     relatedSituationSlugs: [
       "wont-touch-surfaces",
       "hour-long-showers",
@@ -261,6 +291,29 @@ export const situations: Situation[] = [
       "They are requiring you or family members to follow decontamination rituals before interacting with them",
       "The avoidance is paired with increasing hand-washing, showering, or other cleaning compulsions",
       "They express feeling trapped or say things like \"I wish I were normal\"",
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child refuses to touch playground equipment, asks you to push elevator buttons, and won't pick up toys that other children have played with at daycare. They may use their shirt to open doors or cry if their bare skin touches a public surface. Going to the store means they cling to you rather than touch the cart.",
+        parentScript:
+          "I know the Worry Monster says that door is yucky. But look -- I'm touching it with my whole hand! The Worry Monster tells fibs. Want to try touching it with just one finger? I'll hold your other hand while you do it.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child uses their sleeve to open every door at school, avoids the gym because of shared equipment, and won't touch library books other kids have handled. They may be falling behind in science class because they refuse to share lab supplies. Friends have started teasing them about being 'germaphobic,' and birthday parties are stressful because of all the shared surfaces.",
+        parentScript:
+          "I see you using your sleeve on that door again. That's OCD making the rules, not you. What if we practiced touching three doorknobs today with our bare hands and kept track of whether anything bad actually happened? We can make it a science experiment.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen has mapped out which surfaces at school are 'safe' and which are 'contaminated.' They may take longer routes between classes to avoid high-traffic doors, refuse to use school computers, and skip social events at restaurants or malls. They're embarrassed about the behavior and try to hide it, but you notice the avoidance patterns growing. They may have stopped driving because they can't touch the steering wheel without wiping it down first.",
+        parentScript:
+          "I notice you've been avoiding a lot of things lately. I'm not going to force anything, but I want you to know that I see how much energy this is taking from you. OCD is shrinking your world, and you deserve better. Would you be open to working on one small thing this week?",
+      },
     ],
     relatedSituationSlugs: [
       "hands-raw",
@@ -362,6 +415,29 @@ export const situations: Situation[] = [
       "They are becoming aggressive or having meltdowns when clothing changes are delayed",
       "The behavior is impacting their ability to attend school or participate in activities",
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child changes immediately after school, refuses to sit on furniture in their 'school clothes,' and insists that anything they wore outside goes directly into the washing machine. They may have separate 'indoor' and 'outdoor' clothing systems and get visibly anxious if a sibling sits on their bed after being outside. The laundry has tripled.",
+        parentScript:
+          "I can see the OCD wants you to change right now. Let's try something different today -- what if you stayed in your school clothes for 20 minutes while we have a snack? OCD says something bad will happen, but I don't think it will. Want to test it together?",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen has an elaborate system of 'clean' and 'contaminated' clothing. They may shower and change completely after any social interaction, refuse to let friends into their room, and spend significant money on new clothes to have enough 'clean' options. They hide the behavior from peers but you see the overflowing hamper and the anxiety when someone sits on their bed. Dating feels impossible because physical proximity triggers a clothing change.",
+        parentScript:
+          "I know this system feels like it's keeping you safe, but I can see it's also keeping you stuck. I'm not going to run extra laundry loads anymore -- not to be mean, but because I love you too much to help OCD get stronger. Let's figure out a plan together.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child has taken clothing contamination rules to their apartment or dorm. They may have separate 'clean' and 'dirty' sections of their closet, require guests to change into provided clothing, or avoid going to classes because they can't guarantee a clothing change after. They may be spending significant money on laundry or new clothes, and roommate relationships are strained by the demands.",
+        parentScript:
+          "I love you, and I can hear how stressful this is. But when you ask me whether your clothes are contaminated, I'm not going to answer that anymore -- because my answer never actually makes it better, does it? What does your therapist say about building your tolerance for this?",
+      },
+    ],
     relatedSituationSlugs: [
       "wont-touch-surfaces",
       "only-safe-clothes",
@@ -462,6 +538,36 @@ export const situations: Situation[] = [
       "They are unable to eat at school, parties, or any social setting",
       "The food rules are expanding to include new categories or new people",
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child pushes away food you've served, insisting on eating only items they've opened themselves -- crackers from sealed packages, fruit they've peeled. They refuse meals at grandparents' houses and birthday parties are distressing because they won't eat the cake. They may watch your hands anxiously while you prepare food and ask you to wash them again and again.",
+        parentScript:
+          "I know the Worry Monster is saying this food isn't safe, but Mommy/Daddy made it with clean hands and lots of love. Let's be brave together -- can you try one tiny bite? The Worry Monster is going to say it's yucky, but we know that's just a fib.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child refuses school lunch entirely, won't eat food from the cafeteria or brought by classmates for celebrations. At home, they may stand in the kitchen watching you cook, asking if you washed your hands, if the counter was clean, if anyone else touched the ingredients. Playdates are difficult because they can't eat snacks at a friend's house. They're losing weight or becoming nutritionally restricted.",
+        parentScript:
+          "I know OCD is making eating really hard right now. The food I'm making is safe -- but I'm not going to prove it by washing my hands five times or letting you watch me cook step by step. OCD will never be satisfied, so let's focus on taking back your power instead. What's one food you'd be willing to try today?",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen skips lunch at school, avoids eating out with friends, and may be preparing all their own meals at home using specific 'safe' utensils and dishes. They might refuse to share food with a dating partner or feel sick if they learn someone else touched their food after the fact. The social isolation is significant -- they can't do dinner with friends, skip pizza after games, and dread family gatherings with shared dishes.",
+        parentScript:
+          "I see how much this is limiting your life -- not being able to eat with friends, stressing about every meal. I'm not going to accommodate the food rules anymore because I can see they're making things worse, not better. I know that's scary. Can we talk about what a realistic first step would look like?",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child may refuse to eat at restaurants, in the college dining hall, or at holiday gatherings. They might only eat food they've personally prepared in their own kitchen with their own utensils. Romantic relationships are strained because they can't share meals. They may be spending excessive money on groceries to maintain complete control over food preparation. You notice they've become increasingly isolated around mealtimes.",
+        parentScript:
+          "I love having you home for dinner, and I'm not going to change how I cook to match the OCD's rules. I know that's hard. The food is safe, and I'm going to serve it the way I always have. If you choose not to eat it, that's your call -- but I'm not going to help OCD control our family meals.",
+      },
+    ],
     relatedSituationSlugs: [
       "hands-raw",
       "inspects-every-bite",
@@ -560,6 +666,29 @@ export const situations: Situation[] = [
       "They are showering multiple times per day",
       "The shower rituals are expanding (needing to wash clothes, towels, or the bathroom after showering)",
       "Your child is missing school, meals, or sleep because of shower length",
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child's showers have stretched from 10 minutes to 45 minutes or longer. They follow a rigid sequence -- washing each body part a specific number of times, in a specific order. If interrupted or if they lose count, they restart. You can hear the water running and running while they repeat their routine. The water bill has spiked and they're sometimes late for school because the shower took too long.",
+        parentScript:
+          "I'm going to set a timer for 15 minutes. That's enough time for a good shower. When the timer goes off, I'll knock on the door -- that's your signal to finish up. I know OCD wants more time, but we're not going to let it be the boss of shower time anymore.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen disappears into the bathroom for an hour or more. They may use an entire bottle of body wash in a week, follow elaborate washing sequences that they restart if anything feels 'off,' and emerge with red, irritated skin. They're secretive about what happens in the shower and may become explosive if you try to set time limits. Mornings are derailed, hot water runs out for other family members, and their skin is showing signs of damage.",
+        parentScript:
+          "I'm not going to pretend I don't notice the hour-long showers. I care about you too much for that. Here's what I'm thinking: we set a 20-minute shower limit. I know that sounds impossible right now, and OCD is probably screaming about it. But the long showers aren't making you feel cleaner -- they're making OCD stronger. What do you think a realistic first step would be?",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child's shower rituals may be consuming 1-2 hours daily, causing them to miss classes, be late for work, or avoid leaving home altogether. Roommates complain about the bathroom monopoly and water costs. Their skin is dry, cracked, or raw from excessive washing. They may schedule their entire day around shower rituals, declining invitations because they 'haven't showered yet' even though they showered that morning.",
+        parentScript:
+          "I can see how much time the shower rituals are stealing from your life. I'm not going to enable longer showers when you visit -- the hot water goes off after 20 minutes and that's a household boundary, not a punishment. Let's talk about what tools your therapist has given you for managing this.",
+      },
     ],
     relatedSituationSlugs: [
       "hands-raw",
@@ -662,6 +791,29 @@ export const situations: Situation[] = [
       "The demands are escalating to include additional decontamination steps beyond hand-washing (changing clothes, showering, sanitizing objects)",
       "Your own behavior has significantly changed — you find yourself constantly washing, avoiding touching your child's things, or feeling anxious about your own cleanliness",
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child demands that everyone -- parents, siblings, grandparents -- wash their hands before touching them, their toys, or their food. They may scream or pull away if someone reaches for them without washing first. Playgrounds are difficult because other children haven't washed. They may refuse hugs from relatives who just arrived.",
+        parentScript:
+          "I know the Worry Monster wants everyone to wash their hands first. But Grandma's hands are safe, and she really wants to give you a hug. The Worry Monster is being too bossy right now. Can we tell it to be quiet just for one hug?",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has created strict handwashing rules for the household. They track whether family members washed after coming inside, using the bathroom, or touching the trash. They may refuse to touch shared items like TV remotes or game controllers. At school, they avoid partner work because they can't guarantee classmates' hands are clean. They become the 'hygiene police' and family members are walking on eggshells.",
+        parentScript:
+          "I understand OCD is telling you that everyone needs to wash before touching things. But here's the truth: I'm not going to follow OCD's rules anymore, because following them makes OCD stronger. I washed my hands a normal amount today, and that's enough. I know this is hard, and I'm here to help you get through the uncomfortable feelings.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen has elaborate decontamination requirements for anyone entering their space. They may require family members to shower before sitting in the living room, refuse to eat at the table unless everyone has freshly washed hands, and keep hand sanitizer at their bedroom door for anyone entering. Friends have stopped coming over. Dating feels impossible because they can't tolerate physical contact without prior washing. They know the rules are excessive but feel powerless to stop enforcing them.",
+        parentScript:
+          "I respect that this feels really important to you right now. But I'm not going to wash my hands before entering the living room -- that's OCD asking me to play by its rules. I know my saying no makes you anxious, and I'm sorry about that. I'm doing this because I want you to see that the anxiety goes down on its own, even without the washing.",
+      },
+    ],
     relatedSituationSlugs: [
       "hands-raw",
       "hour-long-showers",
@@ -746,7 +898,23 @@ export const situations: Situation[] = [
     "Your child expresses beliefs that something truly catastrophic will happen if they don't check, and these beliefs feel unshakeable",
     "You notice the checking spreading to new areas — not just locks but appliances, water faucets, or homework"
   ],
-  relatedSituationSlugs: ["confirm-stove-off", "bedtime-rigid-rituals", "bad-will-happen-no-ritual"]
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child gets out of bed multiple times to check that the front door is locked. They may also check windows, the garage door, and the back door. They ask you to confirm the doors are locked, and your confirmation only holds for a few minutes before the doubt returns. Bedtime stretches later and later as the checking ritual grows. They may start a mental list of all the entry points and feel compelled to verify each one.",
+        parentScript:
+          "I can see OCD is telling you the door might be unlocked. We checked it together once, and it was locked. I'm not going to check again because checking over and over is feeding OCD. The door is locked, and you are safe. I know the worried feeling is loud, but it will get quieter if we don't listen to it.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen can't leave the house without checking every lock multiple times. They may take photos of locked doors on their phone to reassure themselves later, but then doubt the photos are current. They're chronically late to school because the checking routine eats into their morning. At night, they may get up 5-10 times to recheck, losing sleep and becoming exhausted. They feel embarrassed and may try to hide the behavior, doing quick checks when they think no one is watching.",
+        parentScript:
+          "I notice you've been checking the locks a lot. I'm not going to confirm they're locked for you because that keeps the cycle going. I know that feels really uncomfortable. What if we tried locking the door once together, and then you sit with the doubt for 10 minutes? I'll sit with you. The doubt is loud, but it's not true.",
+      },
+    ],
+    relatedSituationSlugs: ["confirm-stove-off", "bedtime-rigid-rituals", "bad-will-happen-no-ritual"]
 },
 
 {
@@ -819,7 +987,23 @@ export const situations: Situation[] = [
     "Your child is experiencing physical symptoms from the stress — stomachaches, headaches, or difficulty sleeping",
     "They express hopelessness or self-critical statements like \"I'm stupid\" or \"I can't do anything right\" that persist outside homework time"
   ],
-  relatedSituationSlugs: ["erases-rewrites-paper-tears", "refuses-turn-in-work", "rereads-paragraph-dozens"]
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child erases answers and rewrites them until the paper is thin or torn. They spend three hours on 20 minutes of homework, not because they don't understand the material, but because the letters don't look 'right.' They may go through multiple sheets of paper for a single assignment. They become frustrated and tearful, but can't stop trying to make it perfect. Grades may actually drop because assignments are turned in late or not at all.",
+        parentScript:
+          "I can see you're working really hard on that, and I can also see that OCD is making you rewrite things that are already correct. What if we tried a rule: one draft, no erasing? I know it feels wrong, but your teacher cares about your ideas, not whether the letters are perfect. Let's try it for one assignment and see what happens.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen types and deletes essays repeatedly, spending entire evenings on a single paragraph. They may have multiple drafts saved on their computer, none of which feel 'good enough.' They're staying up until 2 AM trying to perfect assignments, missing deadlines, and their grades are suffering despite being a capable student. They may have started avoiding certain classes because the written work triggers such intense perfectionism that it feels paralyzing.",
+        parentScript:
+          "I see you've been at that essay for four hours and I know you're not stuck on the content -- you're stuck on the OCD. What if you set a timer for 30 minutes, wrote whatever comes out, and submitted it? I know that sounds terrifying. But perfection isn't the goal -- learning is. And OCD is stealing your learning time.",
+      },
+    ],
+    relatedSituationSlugs: ["erases-rewrites-paper-tears", "refuses-turn-in-work", "rereads-paragraph-dozens"]
 },
 
 {
@@ -889,7 +1073,30 @@ export const situations: Situation[] = [
     "Family conflict around the reassurance-seeking is significant — arguments, resentment, or siblings being affected",
     "Your child shows signs of depression or hopelessness alongside the OCD, such as withdrawing from activities they used to enjoy"
   ],
-  relatedSituationSlugs: ["checking-door-locks", "asks-same-question-over", "bad-will-happen-no-ritual"]
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child asks you repeatedly whether you turned the stove off after cooking dinner. They may follow you to the kitchen to watch you check, ask you to check again 10 minutes later, and still not be satisfied. They might lie awake worrying that the house will catch fire. The questions escalate around bedtime, when anxiety naturally peaks. They may also start checking other appliances -- the toaster, the iron, the space heater.",
+        parentScript:
+          "The stove is off. I checked it once, and once is enough. I know OCD is telling you it might not be off, but answering the same question over and over doesn't make OCD stop -- it makes it ask louder next time. Let's try sitting with the uncomfortable feeling and seeing what happens.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen checks the stove and other appliances themselves before leaving the house and before bed. They may take photos as evidence, but then doubt the photos. They ask family members to confirm appliances are off and become irritable when you refuse to keep checking. They may be late to school because the checking routine takes 15-20 minutes each morning. They feel ridiculous but can't stop.",
+        parentScript:
+          "I'm not going to send you a photo of the stove being off. I know that feels like I don't care, but it's actually the opposite -- I care too much to feed this cycle. The stove is off. Your brain is going to tell you it might not be, and that's OCD. What does your therapist say about sitting with the doubt?",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child calls you from their apartment or dorm to ask if you're sure the stove was off when they last visited. They may check their own appliances for 30 minutes before leaving for work or class. They've started unplugging every appliance when they leave home. Roommates are frustrated by the checking rituals. They may avoid cooking altogether to eliminate the trigger.",
+        parentScript:
+          "I'm not going to check the stove for you over the phone. We've been through this before, and my checking never actually resolves the worry -- it just pauses it for a few minutes. I believe in your ability to handle this uncertainty. What's one coping strategy you could try right now instead of calling me?",
+      },
+    ],
+    relatedSituationSlugs: ["checking-door-locks", "asks-same-question-over", "bad-will-happen-no-ritual"]
 },
 
 {
@@ -963,7 +1170,30 @@ export const situations: Situation[] = [
     "The health anxiety has led to doctor-shopping, excessive emergency room visits, or conflict with medical providers",
     "Your child expresses a persistent, unshakeable belief that they are seriously ill despite multiple normal medical evaluations"
   ],
-  relatedSituationSlugs: ["asks-same-question-over", "scary-thoughts-cant-stop", "hands-raw"]
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child frequently asks if a freckle is cancer, if a headache means a brain tumor, or if a stomachache means something serious. They may check their pulse, examine their skin in the mirror, or ask you to feel their forehead multiple times a day. They've started avoiding physical activities because they're afraid of noticing body sensations that feel 'wrong.' School nurse visits have increased dramatically.",
+        parentScript:
+          "I know your tummy feels weird and OCD is saying it's something bad. Bodies have lots of feelings all day long -- gurgles, aches, itches. That's just what bodies do. I'm not going to keep checking for you because checking makes the worry bigger, not smaller. You're healthy, and I trust your body.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen Googles symptoms obsessively, checks their body for lumps or marks, and may ask to see a doctor frequently despite normal test results. They monitor their heart rate on a smartwatch and panic if it seems 'off.' They may avoid exercise, certain foods, or anything they associate with illness triggers. They know they're probably fine but can't stop the checking -- and each Google search makes the anxiety worse.",
+        parentScript:
+          "I'm going to ask you to put your phone down and stop searching symptoms. I know that feels impossible right now. But every time you Google, you're feeding OCD, and it will always find one more scary result. If you're truly concerned about a symptom, we'll bring it up at your next regular checkup. I'm not going to give you reassurance about it tonight.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child calls you describing symptoms and asking if they should go to the ER. They may have seen multiple specialists, all of whom found nothing wrong. They spend hours on health forums and medical websites, always finding a new condition that fits their symptoms. They may have stopped exercising, changed their diet dramatically, or become hyperaware of normal body sensations like their heartbeat or breathing. Medical anxiety is consuming their daily life.",
+        parentScript:
+          "I hear you, and I know the anxiety feels very real. But we've been here before -- you've had these scares many times, and every time the doctors say you're fine. I'm not going to help you analyze your symptoms over the phone because that's what OCD wants. If something feels truly urgent, go to urgent care. Otherwise, write it down for your next therapy session.",
+      },
+    ],
+    relatedSituationSlugs: ["asks-same-question-over", "scary-thoughts-cant-stop", "hands-raw"]
 },
 
 {
@@ -1033,7 +1263,16 @@ export const situations: Situation[] = [
     "They are making major life decisions based on OCD (refusing to live alone, dropping out of school, quitting jobs to be closer to home for checking purposes)",
     "Your child acknowledges the behavior is irrational but feels completely unable to stop, and expresses despair about it"
   ],
-  relatedSituationSlugs: ["adult-calls-confirm-no-harm", "confirm-stove-off", "checking-door-locks"]
+      ageSpecificExamples: [
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child texts you multiple times a day asking if the doors are locked at their childhood home, if you turned off the stove, if the dog is okay, or if their old room is untouched. They may need you to confirm the same thing they asked an hour ago. If you don't respond quickly, their anxiety escalates and the texts become more urgent. They may call repeatedly if you don't text back. This pattern intensifies during exam periods or other stressful times.",
+        parentScript:
+          "I love you, and I know it's hard when the worry is this loud. But I'm going to respond to one safety text per day, and my answer is going to be the same: everything at home is fine. Answering every text isn't helping you -- it's just giving OCD another hit. You have the tools to sit with this. I believe in you.",
+      },
+    ],
+    relatedSituationSlugs: ["adult-calls-confirm-no-harm", "confirm-stove-off", "checking-door-locks"]
 },
 
 // ============================================================
@@ -1111,7 +1350,30 @@ export const situations: Situation[] = [
     "Your child becomes physically aggressive or self-injurious when the ritual is interrupted",
     "The rest of the family is being significantly impacted — siblings' bedtimes are disrupted, parental relationship is strained, or family activities are being canceled to accommodate the ritual"
   ],
-  relatedSituationSlugs: ["goodnight-exact-sequence", "objects-right-place-sleep", "specific-order-restarts"]
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child has a bedtime routine that has ballooned to an hour or more. They need their stuffed animals in an exact arrangement, the blanket tucked in a specific way, three sips of water (not two, not four), and a particular goodnight script. If any step is 'wrong,' the entire routine restarts from the beginning. They become hysterical if you try to shorten or skip any step.",
+        parentScript:
+          "I know the Worry Monster wants us to do bedtime in a very specific way. But the Worry Monster's bedtime rules are making bedtime take so long that you're losing sleep time! Tonight, we're going to skip one step. I know that feels scary, but I'll stay right here with you. The Worry Monster will be grumpy, but it will get tired and go to sleep too.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child's bedtime ritual includes checking that devices are charged to specific percentages, arranging school supplies for the next day in a precise order, reviewing the next day's schedule a set number of times, and performing a sequence of movements before getting into bed. They may set alarms to begin the routine early enough to complete it all. If a step is disrupted -- a sibling walks through, a noise happens -- they restart. Bedtime now takes 60-90 minutes, and they're exhausted the next day.",
+        parentScript:
+          "Bedtime has gotten really long because OCD keeps adding rules. Let's make a list of all the steps OCD requires and then pick one to drop this week. You choose which one. I know the anxiety will go up at first, but each night it will be a little less. You're the boss, not OCD.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen's bedtime ritual is elaborate and private -- they may not even tell you all the steps. You can hear them getting in and out of bed, moving around their room, and the lights going on and off. They're staying up until midnight or later completing rituals, then struggling to wake up for school. They're irritable and sleep-deprived, and may have started napping after school to compensate, which further disrupts their sleep cycle. They feel ashamed about needing these rituals at their age.",
+        parentScript:
+          "I can tell bedtime is really stressful for you, and I think OCD has added a lot of rules that are stealing your sleep. I'm not going to demand you tell me every detail, but I want you to know I'm here to help if you want to push back against some of those rules. What if we just started with one small change?",
+      },
+    ],
+    relatedSituationSlugs: ["goodnight-exact-sequence", "objects-right-place-sleep", "specific-order-restarts"]
 },
 
 {
@@ -1181,7 +1443,23 @@ export const situations: Situation[] = [
     "The ritual has begun to include other family members involuntarily, causing significant household conflict",
     "Your child expresses specific magical thinking beliefs (\"If I don't say it right, Mommy will die\") that they cannot be redirected from"
   ],
-  relatedSituationSlugs: ["bedtime-rigid-rituals", "say-i-love-you-specific-way", "counts-repeats-prevent-bad"]
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child needs you to say goodnight in a very specific way -- \"Goodnight, sleep tight, I love you, see you in the morning\" -- and if you miss a word or say it in the wrong tone, they dissolve into tears and insist you start over. This can repeat 5-10 times. They may also need to hug you a specific number of times or kiss each cheek in a particular order. Older siblings are frustrated; you're exhausted.",
+        parentScript:
+          "I love you so much, and I'm going to say goodnight one time tonight. If the Worry Monster says it wasn't right, that's okay -- the Worry Monster is wrong. My goodnight counts every time, even if it doesn't feel perfect. I'll stay nearby while you fall asleep.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has a specific goodnight phrase that must be said in the right order, with the right intonation, and they may need to respond with their own specific phrase. If you cough, hesitate, or someone interrupts, the sequence restarts. They may also require goodnight from every family member in a particular order. The whole process can take 20-30 minutes, and other family members are growing resentful of the nightly ritual.",
+        parentScript:
+          "I know OCD says the goodnight has to be perfect or something bad will happen. But here's what I know is true: my love for you doesn't change based on whether I say the words in the exact right order. Tonight I'm going to say goodnight once, my way. The love is the same. Let's see what happens when we don't let OCD script our goodnights.",
+      },
+    ],
+    relatedSituationSlugs: ["bedtime-rigid-rituals", "say-i-love-you-specific-way", "counts-repeats-prevent-bad"]
 },
 
 {
@@ -1255,7 +1533,23 @@ export const situations: Situation[] = [
     "The ordering has expanded beyond bedtime into other areas of life: desk at school, locker, backpack, meal placement",
     "Your child expresses significant distress about the behavior itself — they know it's irrational but feel powerless to stop, and this is affecting their self-esteem"
   ],
-  relatedSituationSlugs: ["arranges-objects-desk", "bedtime-rigid-rituals", "doorways-certain-number"]
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child can't fall asleep unless every item in their room is in a precise position -- books perfectly aligned on the shelf, stuffed animals in a specific order, shoes pointed a certain direction, pencils exactly parallel on their desk. If a sibling moves something or if something shifts during the day, they spend 30+ minutes rearranging before they can even try to sleep. They may get up multiple times after lights out to adjust items.",
+        parentScript:
+          "I see you rearranging everything again. OCD is telling you that you can't sleep unless everything is perfect, but that's not true -- OCD is the thing keeping you awake, not the position of your books. What if we left one thing out of place tonight and you practiced sleeping with that tiny bit of 'wrong'? I'll be right down the hall.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen's room arrangement ritual has become increasingly specific and time-consuming. They may photograph the room layout on their phone to verify nothing has changed, set up items in patterns invisible to others but critical in their mind, and become furious if anyone enters their room and moves anything. Sleepovers are impossible because they can't replicate the setup. They may be losing an hour or more of sleep to arrangement rituals, and school performance is suffering from exhaustion.",
+        parentScript:
+          "I respect your space, and I'm not going to deliberately mess things up. But I am going to walk into your room normally, and if something shifts, I'm not going to fix it. I know that triggers anxiety. OCD is telling you that the position of these objects controls whether you're safe, and that's just not true. Let's work on proving that together.",
+      },
+    ],
+    relatedSituationSlugs: ["arranges-objects-desk", "bedtime-rigid-rituals", "doorways-certain-number"]
 },
 
 {
@@ -1325,7 +1619,23 @@ export const situations: Situation[] = [
     "Your child has begun expressing specific fears that are unusually intense or detailed for their age (graphic descriptions of what might happen)",
     "Bedtime anxiety is spilling into daytime: your child is anxious about nighttime hours before bed, or is avoiding being alone in any room"
   ],
-  relatedSituationSlugs: ["bedtime-rigid-rituals", "asks-same-question-over", "bad-will-happen-no-ritual"]
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child needs you to check under the bed, in the closet, and behind the curtains a specific number of times before they can even attempt to sleep. One check isn't enough -- it might be three times under the bed, twice in the closet, and once behind each curtain. If you lose count or they feel uncertain, the whole sequence restarts. They genuinely believe something is hiding there, and your checks are the only thing keeping them safe.",
+        parentScript:
+          "I'm going to check one time, and that one check is going to count. The Worry Monster wants me to check again and again, but checking lots of times actually makes the Worry Monster louder, not quieter. I checked, nothing is there, and you are safe. I'm going to sit right outside your door while you fall asleep.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child knows rationally that nothing is under the bed but can't shake the feeling that something bad will happen if you don't check. The checking ritual has expanded -- now they need you to check every room on the floor, verify windows are locked, and confirm the alarm is set. They may get out of bed to re-check areas themselves after you've left. The ritual takes 20-30 minutes and is getting longer. They feel babyish and embarrassed but can't stop.",
+        parentScript:
+          "I know you know nothing is under the bed. The problem isn't the bed -- it's OCD making you feel uncertain even when you know the truth. Tonight I'm going to check once, and then I'm done. The uncomfortable feeling is going to come, and it's going to pass. You're getting better at handling this every night.",
+      },
+    ],
+    relatedSituationSlugs: ["bedtime-rigid-rituals", "asks-same-question-over", "bad-will-happen-no-ritual"]
 },
   // ---------------------------------------------------------------------------
   // SCHOOL & HOMEWORK + REASSURANCE SEEKING
@@ -1406,7 +1716,23 @@ export const situations: Situation[] = [
     "Your child is experiencing significant emotional distress — frequent sobbing, expressions of self-hatred ('I'm so stupid'), or physical symptoms like stomachaches before homework.",
     "You've been consistently applying strategies for 3-4 weeks without any improvement, or the behavior is escalating despite your efforts."
   ],
-  relatedSituationSlugs: ["rewrite-homework-perfect", "refuses-turn-in-work", "adjusts-socks-shoes-even"]
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child erases their letters and numbers over and over at the kitchen table, pressing harder each time. The paper tears and they melt down, needing to start the whole page over on a fresh sheet. A simple name-writing practice or coloring activity turns into 45 minutes of frustration and tears. They may also erase and redo drawings that look fine to everyone else. You go through erasers faster than pencils.",
+        parentScript:
+          "I can see you're working so hard on your letters. The Worry Monster wants them to be perfect, but guess what? Your teacher loves letters that look like a kid wrote them -- that means they're doing it right! Let's try something: no erasing for this whole page. Whatever comes out is wonderful. I'll do it with you -- look, my letters are wobbly too!",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child erases answers on worksheets until the paper is thin and tears. They may go through entire notebooks in a week, tearing out pages that aren't 'right.' They spend hours on homework that should take 20 minutes, not because they don't understand the material, but because the handwriting or formatting isn't meeting OCD's impossible standards. They're falling behind because assignments aren't submitted, and they get upset if you suggest typing instead because it feels like 'giving in.' Teachers may interpret the messy, erased papers as carelessness when it's actually the opposite.",
+        parentScript:
+          "Your answers are right -- the OCD just doesn't like how they look. But here's the thing: your teacher is grading your ideas, not your handwriting. What if we tried a rule? Write each answer once. If OCD says it's not good enough, we say 'too bad' and move on. It's going to feel wrong, and that's okay. I'll sit here with you while we practice.",
+      },
+    ],
+    relatedSituationSlugs: ["rewrite-homework-perfect", "refuses-turn-in-work", "adjusts-socks-shoes-even"]
 },
 
 {
@@ -1481,7 +1807,23 @@ export const situations: Situation[] = [
     "They are spending more than double the expected time on assignments due to rewriting and perfectionism, most nights of the week.",
     "School refusal is emerging — they'd rather not go to school than face the possibility of submitting imperfect work."
   ],
-  relatedSituationSlugs: ["erases-rewrites-paper-tears", "rewrite-homework-perfect", "feels-bad-person-thoughts"]
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child completes their homework but hides it in their backpack rather than turning it in. They say it's 'not ready' or 'not good enough' even after spending hours on it. Teachers report missing assignments while you watch your child do the work every night. They may ask you to review their work repeatedly, and your reassurance that it's fine doesn't help. They'd rather get a zero than turn in something imperfect. Report card comments mention 'missing work' and you're at a loss.",
+        parentScript:
+          "I know OCD is saying this isn't good enough to turn in. But getting a zero for not turning in great work is worse than getting a B on something that isn't perfect. What if we made a deal: you put it in the teacher's pile without re-reading it one more time? I'll email your teacher to let them know you're working on being braver about this.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen has multiple assignments they've completed but can't submit. They may sit with their finger over the 'submit' button on the school portal for 20 minutes, or email the teacher asking for extensions to 'polish' work that's already excellent. They're developing a reputation as irresponsible when they're actually paralyzed by perfectionism. College applications feel impossible because nothing they write is ever 'good enough' to represent them. They know the pattern is self-destructive but can't break it alone.",
+        parentScript:
+          "I can see you've finished that essay and you're sitting on it. OCD wants one more revision, and then one more after that. Let's submit it right now, together. I'll count to three and you hit send. The anxiety is going to spike, and then it's going to come down. You've done this before. Ready?",
+      },
+    ],
+    relatedSituationSlugs: ["erases-rewrites-paper-tears", "rewrite-homework-perfect", "feels-bad-person-thoughts"]
 },
 
 {
@@ -1556,7 +1898,30 @@ export const situations: Situation[] = [
     "They are experiencing significant distress — crying during reading, expressing self-hatred ('I'm so dumb'), or having physical anxiety symptoms.",
     "The pattern has persisted for more than a month despite consistent efforts to implement strategies."
   ],
-  relatedSituationSlugs: ["rewrite-homework-perfect", "refuses-turn-in-work", "adult-cant-start-assignments"]
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child reads the same passage over and over, convinced they missed something or didn't understand it 'well enough.' A 20-minute reading assignment takes two hours. They may move their finger along every word, mouth each sentence silently, and go back to the beginning of the page if their concentration wavers for even a second. They love stories but dread reading homework because it's become a trap.",
+        parentScript:
+          "I can see you keep going back to the same paragraph. OCD is saying you didn't really get it, but you did -- you told me what happened in the story just fine. Let's try reading the next paragraph just once and moving on. If OCD says you missed something, we'll just say 'maybe' and keep going.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen highlights, annotates, and re-reads textbook passages until they feel they've absorbed every word. Study sessions for tests take six or seven hours for material that should take two. They may re-read text messages and emails before sending them, taking 20 minutes to compose a simple reply. They avoid reading-heavy courses and have stopped reading for pleasure entirely because it's become so exhausting and ritualized.",
+        parentScript:
+          "I notice you've been reading the same chapter for three hours. OCD is going to tell you that you need to read it one more time, and then one more after that. But the truth is, you understood it after the first read. What if you closed the book right now and told me what you remember? I bet it's more than OCD says.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child is failing courses or falling behind at work because reading has become a compulsion. They re-read emails before sending, re-read textbooks until they can mentally recite every sentence, and re-read forms and contracts so many times they miss deadlines. They may have switched to audio content to avoid reading, but then replay audio segments repeatedly. Professional documents take them four times longer than peers to process.",
+        parentScript:
+          "I hear you saying you can't keep up with the reading for your classes. I know re-reading feels necessary, but it's OCD, not your comprehension. Have you talked to your therapist about building a 'read once and move on' practice? What support do you need to try that this week?",
+      },
+    ],
+    relatedSituationSlugs: ["rewrite-homework-perfect", "refuses-turn-in-work", "adult-cant-start-assignments"]
 },
 
 {
@@ -1631,7 +1996,30 @@ export const situations: Situation[] = [
     "Your child is expressing hopelessness or despair: 'I'll never be able to go back,' 'What's wrong with me,' or any language suggesting self-harm.",
     "The family system is in crisis: siblings are being significantly affected, you or your partner are missing work regularly, or the daily battles are causing relationship breakdowns."
   ],
-  relatedSituationSlugs: ["wont-touch-surfaces", "hands-raw", "leaving-house-forever"]
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child clings to you at drop-off, crying that school is 'dirty' or that other kids are 'germy.' They may refuse to sit on the classroom rug, share toys, or use the communal art supplies. The teacher reports they're isolated and anxious, spending time washing hands instead of playing. Morning school prep involves tears and negotiations, and you're receiving calls to pick them up because they're too upset to stay.",
+        parentScript:
+          "I know the Worry Monster is saying school is too germy. But school is where all your friends are, and your teacher keeps the classroom clean. The Worry Monster is just trying to keep you home because that's what Worry Monsters do. Let's be brave together -- I'll walk you to the door and give you a brave high-five.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child complains of stomachaches every school morning -- and the aches are real, caused by anxiety. They worry about shared desks, bathroom germs, the cafeteria, and being near kids who are coughing. They may have started doing homework in isolation to avoid touching shared classroom materials. Their attendance is dropping, friendships are suffering, and they're falling behind academically. They may negotiate to attend only certain 'clean' classes.",
+        parentScript:
+          "I know your stomach hurts, and I know that's because OCD is making you anxious about school. Staying home feels better right now, but it makes tomorrow even harder. We're going to get you to school today. I've already talked to your teacher about what makes you anxious, and we'll work on it together. You can do hard things.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen avoids specific classrooms, takes roundabout routes through the school to avoid 'contaminated' areas, and may be skipping classes. They sanitize their desk before sitting down and wipe down their phone after setting it on any school surface. They've stopped eating lunch at school and may be avoiding extracurriculars. Their grades are dropping due to avoidance, and they're becoming increasingly isolated. They may ask to switch to online school.",
+        parentScript:
+          "I know school feels overwhelming right now because of the contamination worries. I hear you when you say it's hard. But switching to online school would mean giving OCD exactly what it wants -- your whole social life and your independence. Let's find a therapist who specializes in OCD and figure out how to make school manageable again. What feels like the hardest part right now?",
+      },
+    ],
+    relatedSituationSlugs: ["wont-touch-surfaces", "hands-raw", "leaving-house-forever"]
 },
 
 {
@@ -1706,7 +2094,16 @@ export const situations: Situation[] = [
     "The reassurance-seeking calls have become so frequent that they're significantly impacting your own mental health, work, or relationships.",
     "They are using alcohol, substances, or other harmful coping mechanisms to manage the anxiety that OCD creates around academic work."
   ],
-  relatedSituationSlugs: ["rereads-paragraph-dozens", "rewrite-homework-perfect", "refuses-turn-in-work"]
+      ageSpecificExamples: [
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child calls or texts in distress because they can't begin a paper, project, or exam. They spend hours organizing their desk, re-reading the assignment prompt, or researching how to write the perfect opening sentence. By the time they feel 'ready,' the deadline has passed. They may have incomplete grades piling up and are considering dropping out. They know the work isn't actually difficult -- it's the starting that's impossible because nothing feels 'right enough' to begin.",
+        parentScript:
+          "I know you're stuck, and I know it's not because you can't do the work -- you absolutely can. OCD is demanding that the conditions be perfect before you start. They never will be. What if you set a timer for five minutes and just wrote badly on purpose? Not forever, just to break the ice. Your therapist calls it 'starting ugly.' Can you try that right now while we're on the phone?",
+      },
+    ],
+    relatedSituationSlugs: ["rereads-paragraph-dozens", "rewrite-homework-perfect", "refuses-turn-in-work"]
 },
 
 // ============================================================
@@ -1785,7 +2182,30 @@ export const situations: Situation[] = [
     "The reassurance seeking is preventing normal daily activities: they can't go to school, eat meals, or fall asleep without extensive reassurance.",
     "Your child is becoming aggressive, self-harming, or expressing hopelessness when reassurance is not provided."
   ],
-  relatedSituationSlugs: ["say-i-love-you-specific-way", "confesses-bad-thoughts", "confirm-stove-off"]
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child asks \"Are you sure the door is locked?\" or \"Is this food safe?\" or \"Am I going to be okay?\" dozens of times. Your answer never sticks -- they'll nod, seem satisfied for 30 seconds, and then ask again with increasing urgency. The questions may center around safety, health, or whether you're mad at them. You find yourself rephrasing the same answer over and over, growing frustrated, and then feeling guilty for being frustrated.",
+        parentScript:
+          "I already answered that question, and my answer is the same as before. The Worry Monster wants me to say it again and again, but that doesn't help the Worry Monster go away -- it makes it come back faster. I love you, and I'm going to give you my answer one time. Then we're going to do something fun together.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child asks you to confirm facts, safety, or your feelings multiple times per hour. \"Are you sure you're not mad at me?\" \"Do you promise I won't get sick?\" \"Is the homework right?\" They may also ask their teacher the same questions at school. They recognize the pattern and feel embarrassed, but the anxiety doesn't resolve until they hear the answer -- and even then, the relief lasts only minutes. They may start texting the questions when you're in another room.",
+        parentScript:
+          "I can see OCD is making you need to hear that answer again. But you already know what I'm going to say, don't you? Tell me -- what do you think my answer is? Right. You knew it. That's you being smart. The hard part is trusting yourself when OCD says you can't. I'm going to help you practice trusting yourself by not answering next time.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen disguises reassurance-seeking as casual conversation -- \"So the car is making a weird noise, do you think it's safe to drive?\" or \"I texted my friend that joke, it wasn't offensive, right?\" You've learned to recognize the pattern, but they get upset when you point it out. They may text friends the same questions they've asked you, cycling through people until someone gives a 'good enough' answer. The reassurance-seeking extends to social media -- re-reading comments to make sure they weren't misinterpreted.",
+        parentScript:
+          "I think you're asking me for reassurance right now, and I know you might disagree. I'm going to trust you to figure this one out yourself -- not because I don't care, but because your judgment is good and OCD is the only thing telling you it isn't. What do YOU think the answer is?",
+      },
+    ],
+    relatedSituationSlugs: ["say-i-love-you-specific-way", "confesses-bad-thoughts", "confirm-stove-off"]
 },
 
 {
@@ -1856,7 +2276,23 @@ export const situations: Situation[] = [
     "The ritual is affecting their relationships — friends or other family members are confused or distressed by the demands.",
     "You find yourself walking on eggshells, afraid to speak naturally around your child for fear of triggering a ritual cycle."
   ],
-  relatedSituationSlugs: ["asks-same-question-over", "goodnight-exact-sequence", "counts-repeats-prevent-bad"]
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child needs you to say \"I love you to the moon and back\" every night, in that exact phrasing. If you say \"I love you so much\" instead, they get distressed and insist you say it 'the right way.' They may also need you to hug in a specific way, kiss a specific cheek, and repeat the phrase a certain number of times. Drop-off at school requires the exact same goodbye phrase or they melt down.",
+        parentScript:
+          "I love you in every way a person can say it. If I say it a little different, it means exactly the same thing. I know the Worry Monster says it has to be perfect, but my love works no matter what words I use. Tonight I'm going to say it my way, and all that love is going to reach you just the same.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has a specific \"I love you\" script that has to be performed exactly right, including tone of voice, number of repetitions, and accompanying physical gestures. If you sneeze during it, if a sibling interrupts, or if your inflection sounds different, the sequence restarts. Other family members are frustrated by the nightly ritual. Your child knows it's \"weird\" but feels terrible dread that something bad will happen to you overnight if the script isn't perfect.",
+        parentScript:
+          "I want you to hear this: my love for you has nothing to do with whether I say specific words in a specific way. I love you when I say it wrong, when I forget to say it, and when I'm grumpy. OCD is trying to turn my love into a formula, and love doesn't work like that. Tonight, I'm going to say goodnight my way. The love is just as real.",
+      },
+    ],
+    relatedSituationSlugs: ["asks-same-question-over", "goodnight-exact-sequence", "counts-repeats-prevent-bad"]
 },
 
 {
@@ -1931,7 +2367,23 @@ export const situations: Situation[] = [
     "They are developing secondary compulsions around the confessing: needing to confess in a specific order, repeating confessions until they feel 'right,' or performing mental rituals before or after confessing.",
     "Your child has expressed feeling fundamentally broken, evil, or unlovable because of the thoughts they can't control."
   ],
-  relatedSituationSlugs: ["scary-thoughts-cant-stop", "feels-bad-person-thoughts", "asks-same-question-over"]
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child comes to you, visibly distressed, and confesses things like \"I had a mean thought about my sister\" or \"I accidentally thought a bad word during class\" or \"I wished something bad would happen and now I'm scared it will.\" They need you to tell them they're not a bad person, but your reassurance only lasts minutes before they're back with another confession. The confessions are getting more frequent and more desperate.",
+        parentScript:
+          "I can see you're really upset about that thought. Here's something important: everybody has weird, uncomfortable thoughts sometimes -- kids, adults, even me. Having a thought doesn't make you bad. OCD is making you feel like you need to confess to feel better, but the confessing actually makes it worse. You are a good person. You don't need to prove it to me by telling me every thought.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen confesses intrusive thoughts that are increasingly distressing -- they might include violent, sexual, or blasphemous content that horrifies them. They may spend hours analyzing whether having the thought means they're a terrible person. They seek reassurance through long, emotional conversations that leave both of you drained. They might also confess things from years ago -- a time they cheated on a test in third grade, a lie they told a friend in fifth grade. They live in constant moral anxiety.",
+        parentScript:
+          "I know these thoughts feel really scary, and I can see how much they're bothering you. But the fact that these thoughts upset you so much is actually proof that they don't represent who you are. Bad people don't agonize over having bad thoughts. I'm not going to go through each thought with you tonight -- not because I don't care, but because the analysis is part of the OCD cycle. You are a good person. Period.",
+      },
+    ],
+    relatedSituationSlugs: ["scary-thoughts-cant-stop", "feels-bad-person-thoughts", "asks-same-question-over"]
 },
 
 {
@@ -2006,7 +2458,16 @@ export const situations: Situation[] = [
     "The harm fears have escalated to the point where your child is avoiding driving, cooking, being around children, or other normal activities due to fear of causing harm.",
     "You are experiencing significant impacts on your own mental health — anxiety, depression, resentment, or burnout — from the constant demands of the reassurance cycle."
   ],
-  relatedSituationSlugs: ["adult-texts-confirm-safe", "asks-same-question-over", "terrified-might-hurt-someone"]
+      ageSpecificExamples: [
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child calls you multiple times a day to confess interactions and ask if they could have caused harm. \"Did I say something rude to that cashier?\" \"I drove over a bump -- could I have hit someone?\" \"I shook someone's hand too hard -- did I hurt them?\" They may also confess past events from weeks, months, or years ago, needing you to reassure them it was fine. The calls disrupt your workday, and your reassurance never lasts more than a few hours before the next call comes.",
+        parentScript:
+          "I love you, and I know it's hard when the worry is this loud. But answering that question for the fifth time isn't helping either of us. You didn't hurt anyone. I've told you that, and you know it's true somewhere underneath the OCD noise. Let's talk about what your therapist suggested instead. I'm going to limit our check-in calls to once in the evening -- not because I don't want to talk to you, but because the frequent calls are part of the problem.",
+      },
+    ],
+    relatedSituationSlugs: ["adult-texts-confirm-safe", "asks-same-question-over", "terrified-might-hurt-someone"]
 },
   // ---------------------------------------------------------------------------
   // SYMMETRY & ORDERING + SOCIAL SITUATIONS
@@ -2086,6 +2547,29 @@ export const situations: Situation[] = [
       "The 'evening up' behavior is spreading to other areas — clothing, backpack straps, how they sit in a chair",
       "Your child expresses hopelessness or frustration like 'I hate my brain' or 'I can't stop'"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child pulls at their socks, adjusts them over and over, and can't leave the house until both socks feel \"exactly the same.\" Shoes get laced and unlaced, velcroed and un-velcroed. Getting ready in the morning takes an extra 20 minutes because of the sock-and-shoe ritual. They may cry at school when the feeling shifts during the day. The preschool teacher has mentioned they spend recess adjusting footwear.",
+        parentScript:
+          "I know your socks don't feel right. The Worry Monster is being really picky about socks today. We're going to put them on one time and then go. The Worry Monster is going to say they're not even, but our feet are going to be just fine. Let's count to ten and see if the feeling gets smaller.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child spends 15-20 minutes adjusting socks and shoes each morning, pulling them up, folding them down, re-tying laces until the pressure feels 'even' on both feet. They may take off their shoes at school to readjust and miss class time. Gym class is stressful because changing shoes doubles the ritual. They've started refusing certain types of socks and shoes, narrowing the options to whatever triggers the least discomfort.",
+        parentScript:
+          "OCD is telling you the socks have to feel perfectly even, but here's a secret: nobody's socks feel perfectly even. We're going to put them on once and walk away. Your feet might feel 'off' for a few minutes, and then your brain will stop paying attention. I promise. Let's test it.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen spends significant time each morning on footwear rituals but tries to hide it. They may wake up early to build in time for the adjustments, avoid activities that require changing shoes (like gym or bowling), and have very specific requirements about sock thickness, shoe lace tension, and how high the sock sits. They feel ridiculous about it but the \"not right\" feeling is overwhelming. They may have switched to slip-on shoes to reduce the variables.",
+        parentScript:
+          "I notice you've been spending a lot of time on your shoes in the morning. I'm not going to make a big deal about it, but I want you to know that's OCD, not your feet. What if we tried putting shoes on once tomorrow and leaving within two minutes? The discomfort will fade faster than you think. I used to think it wouldn't too.",
+      },
+    ],
     relatedSituationSlugs: ["touches-both-hands-even", "dressing-touching-adjusting", "morning-routine-hostage"]
   },
 
@@ -2153,6 +2637,29 @@ export const situations: Situation[] = [
       "It's adding noticeable time to daily routines — getting through a hallway, entering rooms, transitions at school",
       "Your child avoids touching things altogether to prevent triggering the need to even out",
       "Teachers or peers are commenting on the behavior"
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child touches everything with both hands to make it 'even.' If they accidentally brush a wall with their left hand, they must go back and touch it with their right. They may tap things in pairs, touch their face symmetrically, and become distressed when walking if one foot steps on a crack and the other doesn't. Walks to the park take twice as long because of the doubling-back to 'even things up.' They can't explain why they need to do this, just that it feels wrong if they don't.",
+        parentScript:
+          "I see you going back to touch that with your other hand. The Worry Monster is making you do that because it says things have to be even. But what if they don't? Let's try walking past without going back. It might feel weird for a minute, but I bet the weird feeling goes away before we get to the park.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child's evening-up behavior extends to school and activities. They touch both sides of their desk, tap both feet equally on stairs, and adjust their body until both sides feel symmetrical. They're becoming self-conscious as classmates notice the rituals. Writing is slow because they press the pencil equally on both sides of each stroke. Sports are complicated because natural asymmetric movements feel 'wrong.'",
+        parentScript:
+          "I know the evening-up feels like something you have to do, but it's OCD making that rule. What if you tried letting one thing be 'uneven' today? Just one thing. Pick something small. I think you'll find that the uncomfortable feeling fades faster than OCD says it will. And every time it fades, you're proving OCD wrong.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen has developed sophisticated evening-up rituals that are hard to detect -- mental counting, subtle body movements, or internal balancing that happens invisibly. But the rituals slow them down significantly. They may avoid holding hands with a partner because they'll need to hold the other person's hand with the other hand to 'even out.' Test-taking is affected because they tap the pen an even number of times before each answer. They're exhausted by the constant balancing act.",
+        parentScript:
+          "I want to check in about the evening-up stuff. I know you don't always want to talk about it, and that's okay. But if OCD is taking up a lot of mental energy, that's worth addressing. No pressure. I just want you to know that I see it, I understand it, and I'm here whenever you're ready to push back against it.",
+      },
     ],
     relatedSituationSlugs: ["adjusts-socks-shoes-even", "doorways-certain-number", "arranges-objects-desk"]
   },
@@ -2228,6 +2735,29 @@ export const situations: Situation[] = [
       "Sibling conflict has escalated because of touching or moving arranged items",
       "Your child becomes aggressive or has meltdowns when the arrangement is disrupted"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child's desk at home and at school must be arranged with military precision. Pencils parallel, books stacked by size, papers aligned to the corner. If a classmate bumps their desk or a parent moves a pencil, they stop everything to restore order. They may spend the first 10 minutes of each class arranging their desk instead of listening. At home, homework can't start until the desk arrangement is 'right,' which can take 20 minutes.",
+        parentScript:
+          "I see you spending a lot of time getting your desk perfect before you can start homework. OCD is the one who needs it perfect -- you don't. What if we tried starting homework with one thing out of place? Just one pencil at an angle. The discomfort is going to come, and then it's going to pass. Let's prove OCD wrong together.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen's desk, backpack, and locker are meticulously organized, and any disruption causes significant distress. They may re-organize their backpack between every class, spend study time arranging rather than studying, and become upset if someone borrows a pen and returns it to the wrong spot. What looks like tidiness to outsiders is actually rigid OCD-driven control. They're spending more time arranging than learning.",
+        parentScript:
+          "I know your desk organization feels necessary, but I want to point something out: you're spending 30 minutes arranging and 20 minutes actually studying. OCD is stealing your study time by disguising itself as productivity. What if you set a 2-minute timer for organizing and then started working, no matter what the desk looks like?",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child's living space is controlled by arrangement rituals. Their apartment looks immaculate, but the maintenance consumes hours daily. They may be late to work or class because they can't leave until everything is in position. Roommates are subject to strict placement rules for shared items. They may photograph their desk or room before leaving so they can verify nothing moved when they return. Dating is stressful because they dread someone disrupting their carefully maintained spaces.",
+        parentScript:
+          "I love visiting you, and I'm not going to rearrange your things. But I'm also not going to tiptoe around your apartment afraid to move a cup. That's OCD making rules for both of us. If I move something, I trust you to handle the discomfort. That's not me being careless -- it's me believing you're stronger than OCD.",
+      },
+    ],
     relatedSituationSlugs: ["objects-right-place-sleep", "touches-both-hands-even", "specific-order-restarts"]
   },
 
@@ -2301,6 +2831,29 @@ export const situations: Situation[] = [
       "The ritual is spreading to other thresholds — stairs, getting in and out of cars, crossing lines on the floor",
       "Your child has added counting rituals or magical thinking rules to the doorway behavior",
       "They express extreme distress, saying things like 'Something terrible will happen if I don't do it right'"
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child walks through doorways and then backs up to walk through again -- sometimes three, four, or five times before they can move on. They may do it at home, at preschool, at the grocery store. They can't explain why, just that it doesn't feel 'right' until they've done it enough times. Transitions between rooms take five times longer than they should, and other children stare.",
+        parentScript:
+          "I see the Worry Monster is making you go through the door again. Let's try walking through just one time and holding my hand. The Worry Monster is going to say it wasn't right, but it was! You went through the door and you're on the other side. That's all a door needs.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child walks through doorways a set number of times, and the number may change depending on the doorway or their anxiety level. They're late to class because of doorway rituals in the school hallway. Other kids have noticed and asked questions, which humiliates them. They may try to disguise the behavior by pretending they forgot something, walking back to \"get\" it, then walking through again. Some doorways are worse than others, and they may avoid certain rooms entirely to skip the ritual.",
+        parentScript:
+          "I notice the doorway thing is getting harder. Let's try something: just for this one door, walk through once and stop. I know it feels wrong. The 'not right' feeling is OCD, and it passes. I'm going to stand on the other side and wait for you. You can do this.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen has internalized the doorway ritual to make it less visible -- they may pause briefly, mentally count, or do a subtle shuffle that most people wouldn't notice. But it's still consuming mental energy with every transition. They may avoid leaving their room to reduce the number of doorway encounters, or feel exhausted by the end of the school day from performing the ritual at every classroom door. They dread fire drills and assemblies because of the multiple doorway transitions.",
+        parentScript:
+          "I want you to know that I notice the doorway thing even though you've gotten really good at hiding it. I'm not bringing it up to embarrass you -- I'm bringing it up because I think it's costing you more energy than you let on. If you want to work on it, I'm here. If not, I'll be here whenever you're ready.",
+      },
     ],
     relatedSituationSlugs: ["touches-both-hands-even", "counts-repeats-prevent-bad", "leaving-house-forever"]
   },
@@ -2379,6 +2932,29 @@ export const situations: Situation[] = [
       "They're becoming isolated, declining invitations, or withdrawing from friendships",
       "They express distress like 'I'm a terrible person' or 'Nobody actually likes me' with genuine conviction"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child comes home from school replaying conversations from the day. \"Did I sound mean when I said that?\" \"My friend made a face -- did I offend her?\" They may ask you to evaluate whether something they said was okay, and no amount of reassurance settles the worry. They replay interactions from weeks or months ago, suddenly needing to confirm that a comment they made in September wasn't hurtful. Friendships are strained because they're so focused on analyzing past interactions that they can't be present in current ones.",
+        parentScript:
+          "I can tell you're stuck on that conversation. OCD is playing it on repeat and pointing out everything that might have been wrong. But here's what I know: you're a kind person, and one comment that might have sounded a tiny bit off doesn't change that. I'm not going to analyze the conversation with you because that keeps the replay going. What would you like to do right now instead?",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen spends hours mentally reviewing social interactions, analyzing texts, and rereading their own social media comments. They may screenshot conversations to review later, ask friends \"did you think that was weird?\" and withdraw from social situations to reduce the material they need to analyze. They're exhausted from the constant mental replay and may be developing social anxiety on top of the OCD. Dating is particularly triggering because every text exchange gets reviewed dozens of times.",
+        parentScript:
+          "I see you on your phone going through those texts again. I'm not going to tell you whether what you said was fine -- because you know it was, and OCD is the one who disagrees. What if you put the phone in another room for 30 minutes and saw what happens to the worry? I think it'll get quieter. Want to try?",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child calls you to dissect conversations with coworkers, professors, or partners. They may replay a meeting for days, asking you if their comment about the project was inappropriate or if they offended their boss. Work performance suffers because they're so focused on past interactions that they can't engage in current ones. They may avoid speaking up in meetings entirely or draft emails for hours, rereading every word for potential offense.",
+        parentScript:
+          "I know you're worried about what you said in that meeting. I'm not going to go through it line by line with you because we've done that before and it never actually resolves the worry -- it just keeps the conversation alive in your mind. Your colleagues aren't replaying it the way you are. Can you try letting this one go and talking about it with your therapist instead?",
+      },
+    ],
     relatedSituationSlugs: ["avoids-friends-afraid", "asks-same-question-over", "confesses-bad-thoughts"]
   },
 
@@ -2452,6 +3028,22 @@ export const situations: Situation[] = [
       "The social avoidance is accompanied by other OCD symptoms — checking, confessing, mental rituals",
       "Their mood has noticeably declined — increased sadness, loss of interest in previously enjoyed activities, changes in sleep or appetite"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has stopped accepting playdates, makes excuses to skip birthday parties, and eats lunch alone to avoid conversations. They're terrified of accidentally saying something mean, weird, or wrong. They rehearse conversations in advance and feel drained by the effort of monitoring every word. They used to be social and have close friends, but the OCD-driven withdrawal is making them increasingly isolated. Other parents are asking why your child doesn't come around anymore.",
+        parentScript:
+          "I know it feels safer to avoid friends right now, and I understand why. But OCD is stealing your friendships, and you deserve to have fun with kids your age. What if we invited just one friend over for something easy -- a movie, where you don't have to talk as much? We can start small. I'll be nearby if you need me.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen has pulled away from their friend group, turning down invitations and spending most of their time alone in their room. They may still have group chats but rarely contribute, fearing they'll say something that will be screenshotted or judged. They dread class presentations and group projects. They may say they \"don't like\" their friends anymore as a cover for the social anxiety that OCD is fueling. You notice they seem lonely and sad but insist they're fine.",
+        parentScript:
+          "I've noticed you've been spending a lot of time alone, and I miss seeing your friends around. I'm not going to force you to be social, but I want to name what I think is happening: OCD is making you afraid of saying the wrong thing, so you're avoiding everyone to stay safe. The problem is that 'safe' is turning into 'lonely.' When you're ready, I'll help you figure out a small step back toward the people who care about you.",
+      },
+    ],
     relatedSituationSlugs: ["replays-conversations", "teen-wont-text-post", "feels-bad-person-thoughts"]
   },
 
@@ -2524,6 +3116,22 @@ export const situations: Situation[] = [
       "The anxiety about communication has spread to in-person interactions — they're also avoiding speaking in class, at meals, or with family",
       "They express hopelessness about their social life: 'I'll never be normal' or 'I can't talk to anyone'",
       "You notice signs of depression alongside the OCD — withdrawal, persistent sadness, changes in sleep or eating, loss of interest in everything"
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen types and deletes text messages repeatedly, spending 20 minutes on a simple reply. They've stopped posting on social media entirely, deleted old posts in case they were offensive, and may review conversations from months ago looking for anything problematic. They ask you to read their texts before sending and get upset when you refuse to edit them. They feel disconnected from friends because they can't participate in the constant digital conversation that teenagerhood requires.",
+        parentScript:
+          "I'm not going to proofread your texts because that keeps OCD in charge of your friendships. Your friends aren't analyzing your messages the way you are -- they're just happy to hear from you. What if you sent the next text within 30 seconds of typing it, no editing? The anxiety will spike and then it will come down. You've done harder things than this.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child agonizes over every email, text, and social media interaction. They may take hours to respond to a simple work email, delete and rewrite messages to friends, and avoid digital communication altogether when the anxiety is too high. They've missed networking opportunities, relationship conversations, and professional deadlines because composing written communication has become an exhausting OCD ritual. They may call you to read a draft text to a friend before sending it.",
+        parentScript:
+          "I'm not going to review that email for you. I know it feels risky to send it without checking, but every time you get someone else to review your words, OCD learns that your judgment can't be trusted. It can. Hit send, feel the anxiety, and let it pass. If you need support, call your therapist, but I'm stepping out of the proofreading role because it's not helping you get better.",
+      },
     ],
     relatedSituationSlugs: ["replays-conversations", "avoids-friends-afraid", "rewrite-homework-perfect"]
   },
@@ -2627,7 +3235,30 @@ export const situations: Situation[] = [
     "You notice your child has begun avoiding specific people (a sibling, a friend) because of the content of their intrusive thoughts.",
     "Your own strategies and the approaches here are not making a noticeable difference after 3-4 weeks of consistent effort, or the situation is escalating.",
   ],
-  relatedSituationSlugs: [
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child tells you they have 'bad pictures' in their head or 'scary thoughts' that won't go away. They may not be able to describe the content clearly but are visibly distressed. They might ask for repeated reassurance that they're a good person or that nothing bad will happen. They may develop avoidance behaviors -- not wanting to be near a baby sibling because they had a scary thought about the baby, or avoiding certain rooms where a bad thought occurred.",
+        parentScript:
+          "Thank you for telling me about the scary thoughts. That was very brave. Everybody has weird or scary thoughts sometimes -- even mommies and daddies. Those thoughts don't mean anything is going to happen. They're like clouds going across the sky -- they float by and disappear. You're not bad for having them. Let's give those thoughts a silly name so they feel less scary.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child may describe intrusive thoughts about harming someone, something bad happening to the family, or disturbing images that pop into their head uninvited. They try to push the thoughts away, which makes them come back stronger. They may develop rituals to \"cancel out\" the bad thoughts -- counting, tapping, repeating phrases. They're terrified the thoughts mean something about who they are. They may avoid knives, busy roads, or being alone because they fear what their thoughts might \"make\" them do.",
+        parentScript:
+          "I'm really glad you told me about these thoughts. I know they feel really scary and I know you think they mean something about you. But here's the truth: the fact that these thoughts upset you so much is proof that they're not who you are. OCD sends the scariest thoughts it can find because it knows those are the ones you'll pay attention to. The thoughts are noise. They're not instructions. You are safe.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen may be experiencing intrusive thoughts with violent, sexual, or blasphemous content that horrifies them. They may spend hours trying to figure out if the thoughts \"mean something\" about them, compulsively researching OCD online to reassure themselves, and avoiding triggers that bring the thoughts on. They might withdraw from activities, relationships, or religious practices. They feel profound shame and may resist telling you the specific content of the thoughts, saying only that they have \"horrible\" thoughts they can't stop.",
+        parentScript:
+          "You don't have to tell me what the thoughts are if you're not ready. What I need you to know is this: intrusive thoughts are a known part of OCD, and they do not reflect who you are as a person. The worst, most disturbing thoughts OCD can generate are the ones it throws at the kindest, most conscientious people. I'm not scared of your thoughts, and you don't need to be either. Let's talk about getting you the right kind of help -- someone who specializes in OCD and won't be shocked by anything you share.",
+      },
+    ],
+    relatedSituationSlugs: [
     "terrified-might-hurt-someone",
     "feels-bad-person-thoughts",
     "confesses-bad-thoughts",
@@ -2716,7 +3347,30 @@ export const situations: Situation[] = [
     "Your child has expressed hopelessness about ever getting better, or has said they feel like a monster, a psychopath, or that they should be locked away.",
     "You as a parent feel out of your depth, scared, or unsure whether the thoughts are 'just OCD' — a qualified OCD specialist can do a proper assessment and provide clarity and relief for the whole family.",
   ],
-  relatedSituationSlugs: [
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has become afraid they might hurt someone -- a sibling, a friend, even you. They may avoid holding scissors, keep distance from younger children, or refuse to play contact sports. They ask repeatedly: \"What if I lose control? What if I hurt someone by accident?\" They may have stopped hugging because they're afraid of squeezing too hard. They look tortured, and you can see they're the last person in the world who would hurt anyone.",
+        parentScript:
+          "I know these thoughts are really scary. But I want you to notice something: people who are actually dangerous don't worry about being dangerous. The fact that this terrifies you is proof that you are safe. OCD picks the thing you care about most -- keeping people safe -- and turns it into your biggest fear. You are not your thoughts. Do you want to talk about this more, or would you like to do something together to take a break from the worry?",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen avoids being alone with younger siblings or children, keeps distance from pets, and may refuse to learn to drive because they're terrified of hitting someone. They research \"signs of being a psychopath\" online, then agonize over whether they fit the criteria. They may have confessed to a friend who didn't understand, making them feel even more isolated and ashamed. They know intellectually that they're not dangerous, but the doubt is overwhelming.",
+        parentScript:
+          "I trust you completely around other people, including your little brother. I need you to hear that. OCD is telling you that having a thought about hurting someone means you're going to do it, and that is absolutely false. These kinds of intrusive thoughts are one of the most common forms of OCD, and they happen to the gentlest people. You are not a threat. Would you be open to seeing a therapist who specializes in this specific kind of OCD?",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child has confided that they're terrified of being a dangerous person. They may avoid cooking (knives), driving (hitting someone), or being around children or animals. They research violent crimes to confirm they're \"not like that,\" then spiral into doubt. They may have confessed to friends or partners who reacted with alarm, further confirming their worst fears. They're considering quitting their job because they work with vulnerable people and the thoughts feel unbearable.",
+        parentScript:
+          "I hear you, and I am not afraid of you. Not even a little bit. These thoughts are OCD at its cruelest, targeting the thing you care about most. You are a compassionate person who is suffering because of intrusive thoughts -- you are not a danger to anyone. I'm not going to go through the evidence with you because that's a compulsion. But I am going to help you find a specialist in OCD who handles exactly this. You don't have to live like this.",
+      },
+    ],
+    relatedSituationSlugs: [
     "scary-thoughts-cant-stop",
     "avoids-sharp-objects",
     "feels-bad-person-thoughts",
@@ -2805,7 +3459,30 @@ export const situations: Situation[] = [
     "They have begun avoiding situations, people, or activities because they feel they 'don't deserve' them or because they fear their own thoughts.",
     "You have noticed any self-punishing behavior — denying themselves food, sleep, comfort, or enjoyment as 'punishment' for their thoughts.",
   ],
-  relatedSituationSlugs: [
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child believes they're a terrible person because of their thoughts. They confess 'sins' constantly -- \"I thought something mean about my teacher\" or \"I wished my sister would go away.\" They may punish themselves by giving away toys, refusing treats, or doing excessive good deeds to \"make up\" for the thoughts. They ask you multiple times a day if they're a good person and dissolve into tears when the reassurance doesn't stick. They may become hyperreligious or develop moral scrupulosity.",
+        parentScript:
+          "You are a good person. I know that with my whole heart. And good people sometimes have thoughts that feel bad -- that's just what brains do. Having a grumpy thought about your sister doesn't make you a bad person any more than having a dream about flying makes you a bird. OCD is the one calling you bad. I'm not going to keep proving to OCD that you're good, because OCD will never be satisfied. But I will tell you this: I know who you are, and you are wonderful.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen is in moral anguish over their thoughts and may be developing scrupulosity -- an OCD subtype focused on being morally or religiously pure. They confess extensively, analyze every past action for wrongdoing, and may have become rigidly moralistic in ways that isolate them from peers. They research philosophical and religious concepts about good and evil, trying to prove to themselves that they're not bad. They may have panic attacks triggered by a thought they judge as immoral.",
+        parentScript:
+          "I see how much pain you're in, and I want you to know that questioning whether you're a good person this intensely is itself a form of OCD called scrupulosity. Truly bad people don't lose sleep over whether they're bad. I'm not going to analyze specific thoughts with you because that keeps the cycle going. But I am here. And I think it's time to find someone who specializes in this -- because you deserve to feel the peace that everyone else can see you've earned.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child may be consumed by moral scrupulosity, confessing past actions from childhood, agonizing over whether a joke they made was offensive, or doing excessive volunteering or donating to \"prove\" they're good. They may call you seeking reassurance about something they said years ago. Religious scrupulosity may manifest as excessive prayer, confession, or religious practice that has gone beyond devotion into compulsion. Relationships suffer because they feel unworthy of love.",
+        parentScript:
+          "I love you, and I can see how much this is consuming you. When you call me to confess something you said ten years ago, I know that's OCD, not genuine moral concern. I'm not going to absolve you for things that don't need absolution -- because doing so just teaches OCD to bring up the next thing. You are a good person who is struggling with a very treatable condition. Let's focus on that.",
+      },
+    ],
+    relatedSituationSlugs: [
     "scary-thoughts-cant-stop",
     "confesses-bad-thoughts",
     "terrified-might-hurt-someone",
@@ -2894,7 +3571,30 @@ export const situations: Situation[] = [
     "Your child has expressed that they are 'dangerous' and should be kept away from others, or has asked to be 'locked in' their room for others' safety.",
     "You are unsure whether the thoughts represent OCD or something else — a professional assessment can provide clarity and is always worthwhile for harm-related presentations.",
   ],
-  relatedSituationSlugs: [
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child avoids the kitchen when knives are out, won't use scissors at school, and may flinch away from pencils or forks. They're terrified that they might \"snap\" and hurt someone or themselves with a sharp object. They may ask you to lock up all the knives or refuse to set the table. They feel deeply ashamed of this fear because they know they don't want to hurt anyone -- but OCD tells them they can't be sure.",
+        parentScript:
+          "I know you're scared of the knives, and I understand why. But OCD is telling you a lie: it's saying that having a scary thought about a knife means you'll use it. That's not how thoughts work. I'm going to keep the knives where they normally are, and I'm going to stay calm about it, because I know you're safe. You're not dangerous. OCD is just loud.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen avoids cooking, refuses to use sharp tools in shop class or art class, and may avoid friends' homes where knives are visible. They might hide knives or scissors when friends come over, afraid of what might happen. They've likely researched violent acts online and now fear they could be capable of the same thing. They feel deeply isolated by these thoughts and may be reluctant to tell anyone, fearing they'll be treated as dangerous. They need you to know this isn't about wanting to hurt anyone -- it's about being terrified that they could.",
+        parentScript:
+          "I want to talk about the knife avoidance, because I know OCD is making it feel really dangerous. Here's what I believe and what the evidence shows: you are not going to hurt anyone. The thought that you might is OCD, not reality. I'm not going to remove the knives because that tells your brain the danger is real. But I will sit with you in the kitchen and help you get used to being around them safely. We'll go at your pace.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child may have eliminated all sharp objects from their living space, avoids cooking, and feels panicked in kitchens or workshops. They may have confided in a friend or partner who didn't understand OCD and reacted with fear, reinforcing the belief that they're dangerous. They may avoid visiting your home because of the knives in the kitchen. They've possibly been misdiagnosed with anger issues or violent tendencies by providers unfamiliar with harm OCD.",
+        parentScript:
+          "I'm not going to put the knives away when you visit. I know that sounds harsh, but it's actually the loving thing to do because hiding the knives confirms OCD's lie that you're dangerous. You're not. You're someone with a specific type of OCD that makes you afraid of things you'd never do. Have you found a therapist who understands harm OCD specifically? That distinction matters a lot.",
+      },
+    ],
+    relatedSituationSlugs: [
     "terrified-might-hurt-someone",
     "scary-thoughts-cant-stop",
     "feels-bad-person-thoughts",
@@ -2986,7 +3686,30 @@ export const situations: Situation[] = [
     "Your child has developed rituals around food that go beyond preparation (repeated handwashing before eating, needing to say certain words before meals, chewing a specific number of times).",
     "You suspect your child may be developing an eating disorder alongside or overlapping with OCD — professional assessment can differentiate and treat both.",
   ],
-  relatedSituationSlugs: [
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child needs sandwiches cut diagonally (never horizontally), food that doesn't touch other food on the plate, and meals served on a specific plate with a specific cup. If the apple slices are the wrong thickness or the toast is too dark, they refuse to eat. Mealtimes are a minefield of rigid rules that escalate into meltdowns if broken. What started as normal toddler preferences has intensified into inflexible demands that disrupt the whole family.",
+        parentScript:
+          "I know you want your sandwich cut a special way, and the Worry Monster says it has to be that way or it's not okay. But this sandwich has the same yummy stuff inside no matter how it's cut. Today I'm going to cut it a different way, and I bet it tastes exactly the same. If the Worry Monster gets grumpy, we'll just let it be grumpy.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has detailed rules about food preparation: specific brands, specific cooking methods, specific serving temperatures. They may refuse to eat at restaurants because they can't control how the food is made. School lunch is out of the question. They inspect their meals at home and interrogate you about preparation steps. If a rule is violated, they can't eat the food, even if they're hungry. The rules are expanding, and the list of acceptable meals is shrinking.",
+        parentScript:
+          "I hear you that the food doesn't feel right. OCD is making a lot of rules about how food needs to be prepared, and I'm not going to follow all of them anymore. Not because I don't care, but because following those rules is making OCD stronger and your world smaller. Tonight's dinner is dinner. You can eat it or not, and I won't be upset either way. But I'm cooking it the regular way.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen may insist on preparing all their own meals to ensure the 'right' process is followed. They spend 45 minutes making a simple meal because every step must be done in order. Eating out with friends is impossible, and they've started turning down social invitations that involve food. They may photograph their food preparation to review later and confirm it was done correctly. They recognize the behavior is excessive but feel they can't eat safely otherwise.",
+        parentScript:
+          "I see you spending a lot of time on meal prep, and I know it's not because you love cooking -- it's because OCD has made eating feel unsafe unless you control every variable. That's not sustainable, and it's isolating you from the people you care about. What would it look like to eat one meal this week that you didn't prepare? We can start with something easy.",
+      },
+    ],
+    relatedSituationSlugs: [
     "inspects-every-bite",
     "eat-specific-order-bites",
     "refuse-food-others-touched",
@@ -3075,7 +3798,30 @@ export const situations: Situation[] = [
     "Food-related anxiety has generalized to non-food contamination (doorknobs, surfaces, objects) suggesting broader contamination OCD that requires professional ERP treatment.",
     "Mealtimes have become so distressing that they are damaging family relationships, causing significant conflict, or leading to your child eating alone to avoid the anxiety.",
   ],
-  relatedSituationSlugs: [
+      ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child examines every piece of food before putting it in their mouth -- turning it over, looking for discoloration, sniffing it, sometimes pulling it apart. A meal that should take 15 minutes takes 45. They may spit food out if something looks or feels 'off,' even mid-chew. Eating in the school cafeteria is impossible because they can't inspect the food carefully enough in the time allotted. They're losing weight or becoming nutritionally limited.",
+        parentScript:
+          "I can see you're checking your food really carefully. OCD is telling you something might be wrong with it, but this food is safe -- I made it, and I know exactly what's in it. What if you tried eating the next three bites without inspecting them? I know that's scary. Let's do it together -- I'll take a bite without looking too, and we'll see that we're both totally fine.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen picks apart meals, uses the flashlight on their phone to inspect food at restaurants, and has an ever-growing list of foods they won't eat because they once found something 'wrong' with them. They may eat only processed, packaged foods because they feel more predictable. Dining with friends or on dates is excruciating. They know the behavior is noticeable and feel ashamed, but the anxiety of eating something uninspected feels worse than the social cost.",
+        parentScript:
+          "I notice you're inspecting your food again, and I know OCD is running the show right now. I'm not going to tell you the food is safe because that's reassurance and it doesn't stick. What I will say is this: you've eaten thousands of meals and nothing bad has happened. Your track record is perfect. What would it take for you to trust that track record more than OCD's warnings?",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child may refuse to eat at your house, avoid restaurants entirely, or bring their own food to family gatherings. They spend significant time inspecting groceries at the store, returning items that don't look 'right,' and examining meals under bright light before eating. They're nutritionally restricted and possibly underweight. The food inspection ritual may have expanded into checking drinks, medication, and supplements with the same intensity.",
+        parentScript:
+          "I made this dinner for the family, and I'm not going to change the recipe or preparation to match OCD's rules. The food is safe. I know you may not be able to eat it tonight, and that's okay -- but I'm not going to enable the inspection ritual by helping you check. That's something to work on with your therapist. I love you and I want you to be able to enjoy a meal again.",
+      },
+    ],
+    relatedSituationSlugs: [
     "food-prepared-specific-way",
     "refuse-food-others-touched",
     "hands-raw",
@@ -3164,7 +3910,30 @@ export const situations: Situation[] = [
     "The counting or ordering has spread to other areas of life — arranging objects, counting steps, needing to do things in a specific sequence throughout the day — suggesting broader OCD that extends beyond meals.",
     "Your child is becoming distressed, tearful, or angry at every meal, and the family's quality of life around food has significantly deteriorated.",
   ],
-  relatedSituationSlugs: [
+      ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child eats foods in a rigid sequence -- all the chicken first, then all the rice, then all the vegetables, always clockwise on the plate. If foods touch or the order is disrupted, they may refuse to eat, cry, or push the plate away. They count bites or chew a specific number of times. Mealtimes are tense and slow, and they get upset if anyone comments on their eating pattern. You worry they're not getting enough nutrition because some meals end in tears before they finish.",
+        parentScript:
+          "I see you're eating in your special order. The Worry Monster has rules about food, doesn't it? What if today we tried mixing it up -- just one bite of vegetable between bites of chicken? The Worry Monster won't like it, but our tummy doesn't mind at all. I'll try it too -- watch me eat a silly order!",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child's eating rituals have become elaborate: specific numbers of bites per food, chewing each bite a set number of times, pausing between foods, and becoming distressed if the sequence is interrupted by conversation or a sibling's behavior. Lunch at school is rushed because the rituals take so long, and they often come home hungry. Birthday parties and holiday meals are stressful because they can't follow their pattern with unfamiliar foods served in unpredictable ways.",
+        parentScript:
+          "I know the eating rules feel important, but I want you to notice something: the rules have gotten bigger and taken over mealtime. OCD keeps adding more steps. What if we picked one meal today where we break one rule? You choose which rule. I'm not trying to make eating harder -- I'm trying to help you take mealtime back from OCD.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen eats in a rigid, ritualized pattern that they try to hide from peers. They may eat alone, avoid lunch in the cafeteria, and turn down dinner invitations. If someone notices and comments, they're mortified. The ritual may include internal counting, specific chewing patterns, and \"forbidden\" food combinations. Eating has become a joyless, anxiety-laden chore rather than a social and nourishing activity. They dread holiday meals and family gatherings where their eating will be observed.",
+        parentScript:
+          "I've noticed that eating has become really stressful for you, and I think OCD has a lot of rules about how it has to happen. I'm not going to point out the rituals at the dinner table -- that's between you and your therapist. But I am going to create a calm, pressure-free environment where you can practice breaking the rules when you're ready. No one at this table is judging you.",
+      },
+    ],
+    relatedSituationSlugs: [
     "food-prepared-specific-way",
     "specific-order-restarts",
     "counts-repeats-prevent-bad",
@@ -3249,6 +4018,29 @@ export const situations: Situation[] = [
       "The distress has spread to other areas — they now need other things to feel 'right' too (food, homework, walking through doors)",
       "Your child is expressing hopelessness, saying things like 'I'll never be normal' or 'I hate my brain'"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child changes clothes three, four, five times each morning, crying that nothing feels 'right.' They may say shirts are 'too scratchy,' pants are 'too tight,' or socks feel 'bumpy' -- but even after switching to alternatives, the discomfort remains. Getting dressed takes 30-40 minutes, making you late for school and work. They may strip off clothing during the day if the 'wrong' feeling suddenly returns.",
+        parentScript:
+          "I know your shirt doesn't feel right, and the Worry Monster is saying you need to change again. But we're going to wear this shirt today. Sometimes clothes feel a little funny and then our body stops noticing. Let's put the shirt on and play with your toys -- I bet in a few minutes you won't even think about it.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has a specific set of 'acceptable' clothes that shrinks over time. They change outfits multiple times, leaving rejected clothing piled on the floor. Morning battles about clothing make everyone late and frustrated. They may refuse to wear school uniforms because they can't find one that feels right. Clothing shopping is a nightmare because they reject everything in the store. They feel frustrated with themselves but can't explain what's 'wrong' with each outfit.",
+        parentScript:
+          "I know getting dressed feels really hard right now. OCD is being picky about how clothes feel, and it's never satisfied. Here's what we're going to try: you pick one outfit and that's it for the day. If OCD says it's wrong, we're going to say 'too bad, this is what we're wearing.' The 'wrong' feeling will fade. I promise. And if it helps, I'll pick an outfit I'm not thrilled about too, and we'll be a little uncomfortable together.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen changes multiple times before school, before going out with friends, and before any event where they'll be seen. They're not worried about fashion -- they're fighting an OCD-driven sense that something is 'off' that they can't resolve. They may be late to school regularly, avoid social events because they can't settle on an outfit, and spend excessive money on new clothes hoping to find the 'right' thing. The floor of their room is covered in rejected outfits.",
+        parentScript:
+          "I'm not going to tell you which outfit looks best because this isn't about how you look -- it's about OCD telling you nothing feels right. The truth is, you look great in all of those. What if you set a five-minute timer, chose something, and walked out the door? The discomfort is going to be there no matter how many times you change. Let's practice walking through it.",
+      },
+    ],
     relatedSituationSlugs: ["only-safe-clothes", "dressing-touching-adjusting", "adjusts-socks-shoes-even"]
   },
 
@@ -3324,6 +4116,29 @@ export const situations: Situation[] = [
       "They're missing school regularly because of clothing-related distress",
       "Your child has started applying 'safe' and 'unsafe' rules to other categories beyond clothing (foods, rooms, people)"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child will only wear one or two specific outfits, melting down if those items are in the laundry. They may insist on the same shirt for a week straight, refuse to wear anything for special occasions, and scream if you try to put them in something new. The safe clothes may be soft, tagless, or a certain color. You're doing laundry every night to have the 'safe' outfit ready for morning.",
+        parentScript:
+          "I know you love your blue shirt, and it's in the washing machine right now getting all clean for tomorrow. Today we're going to try the green shirt. The Worry Monster might say it's not right, but your body is going to be just fine in the green shirt. I'll be with you the whole time.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has a small rotation of 'safe' clothing and refuses everything else. The safe clothes may be worn out, stained, or seasonally inappropriate, but they won't budge. They refuse hand-me-downs, new clothes for school, and anything purchased without their direct approval. School events requiring specific attire (picture day, field trips, performances) cause intense anxiety. They may wear the same outfit to the point of social commenting from classmates.",
+        parentScript:
+          "I understand these are the clothes that feel safe, and I know trying new ones feels really scary. But OCD is making your wardrobe smaller and smaller, and pretty soon you won't have any options left. What if we went shopping and you picked one new item -- just one -- and tried wearing it for one hour at home? We don't even have to leave the house. We're just testing.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen wears the same few items in rotation, avoids situations that require specific clothing (dances, sports, job interviews), and panics if a 'safe' item is damaged or lost. They may have missed opportunities because they couldn't find acceptable clothing. They're embarrassed about wearing the same things and try to play it off as a style choice, but you can see the anxiety underlying the rigidity. Growing out of safe clothes is a crisis because finding replacements is agonizing.",
+        parentScript:
+          "I know these are the clothes that feel okay, and I'm not going to throw them out. But I also notice that OCD is limiting your options more and more. What if we ordered something online, low stakes, and you tried it on in your room with no pressure to keep it? If it works, great. If not, we send it back. I just want to help you have more choices, not fewer.",
+      },
+    ],
     relatedSituationSlugs: ["changes-outfits-repeatedly", "changing-clothes-contamination", "morning-routine-hostage"]
   },
 
@@ -3398,6 +4213,29 @@ export const situations: Situation[] = [
       "They're experiencing physical pain — raw skin from adjusting, sore fingers from retying shoes",
       "The morning distress is so intense that your child is regularly late for or absent from school",
       "You notice your child is becoming withdrawn, anxious about other daily activities, or expressing feelings of being 'broken'"
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child pulls at their clothes, adjusts seams, retucks shirts, and fusses with waistbands endlessly. They touch and re-touch fabric, straighten sleeves, and smooth down collars over and over. Getting dressed takes 30+ minutes not because they can't pick an outfit, but because they can't stop adjusting the one they're wearing. They arrive at preschool already distressed and spend the first hour tugging at their clothes instead of participating.",
+        parentScript:
+          "I can see you're adjusting your shirt again and again. The Worry Monster wants it to feel just perfect, but clothes don't need to feel perfect -- they just need to be on your body. We're going to stop adjusting and go play. The funny feeling might last a few minutes, and then your body will forget about it. I promise.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child's dressing ritual involves specific sequences of adjustments: tuck the shirt, adjust the collar, pull the sleeves, straighten the waistband, check in the mirror, and repeat. If any step doesn't feel right, the whole sequence restarts. They may change clothes just to restart the dressing ritual. At school, they excuse themselves to the bathroom to re-adjust their clothing. Teachers have noticed the frequent bathroom trips. They're missing class time and falling behind.",
+        parentScript:
+          "Getting dressed has become an OCD ritual, and I can see it's exhausting you. Let's try something new: set a timer for 3 minutes. You get dressed in that time -- one pass, no adjustments, no mirror check. I know it's going to feel 'wrong.' That 'wrong' feeling is OCD, not your clothes. Every time you sit with that feeling and it fades, you're getting stronger.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen's dressing ritual has become private and time-consuming. They lock the bathroom door and spend 30-45 minutes adjusting clothing, often emerging looking exactly the same as when they went in. They may be late for school every day, cancel plans because they can't get dressed in time, and become irritable when rushed. The adjusting may continue throughout the day in subtle ways -- tugging, smoothing, straightening -- that take mental energy away from everything else.",
+        parentScript:
+          "I'm not going to rush you because I know that makes it worse. But I do want to acknowledge that the dressing routine is taking a big chunk of your day and your energy. What would it look like to cut the routine in half? Not eliminate it -- just reduce it. You're the expert on what feels possible. I'm just here to support whatever step feels right.",
+      },
     ],
     relatedSituationSlugs: ["adjusts-socks-shoes-even", "changes-outfits-repeatedly", "morning-routine-hostage"]
   },
@@ -3478,6 +4316,29 @@ export const situations: Situation[] = [
       "The rigid sequencing has spread to other times of day — after-school routines, bedtime, or weekend activities",
       "Your child is waking up extremely early to give themselves more time for rituals, or losing sleep from anxiety about the morning"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child's morning routine must follow an exact sequence: specific order for getting out of bed, using the bathroom, brushing teeth, getting dressed, eating breakfast. If any step is out of order or feels 'wrong,' the entire routine restarts from the beginning. A disruption at breakfast means going back to bed and starting over. The family is late to school and work daily, and siblings are growing resentful of the chaos.",
+        parentScript:
+          "I know the Worry Monster wants us to start the morning over, but we're going to keep going forward. We already brushed teeth, so that's done -- we don't need to do it again. The Worry Monster is going to be grumpy, and that's okay. Sometimes we just let the Worry Monster be grumpy while we eat our breakfast.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has an elaborate morning checklist that takes 90+ minutes. Each step must be performed in the correct order, with the correct number of repetitions. They may set their alarm an hour early to build in time for the routine, and still be late. If a sibling disrupts the sequence or the routine is interrupted by a phone call, they insist on restarting. You've tried creating alternative routines, but OCD simply colonizes any new structure with its own rules.",
+        parentScript:
+          "Mornings have gotten really long because OCD keeps adding steps. Let's make a list of OCD's morning rules and a list of what actually needs to happen before school. I think you'll see that OCD's list is a lot longer than the real list. Which OCD rule could we drop first? You pick, and we'll practice it tomorrow. I'll be there to help you through the discomfort.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen's morning ritual is rigid and secretive. They may shower, dress, and prepare in a specific order, becoming explosive if interrupted. They're chronically late to school, have lost jobs because they couldn't get out the door on time, and avoid sleepovers or overnight trips because they can't replicate the routine. Morning is the most stressful time of day for the entire household, and the tension follows everyone out the door.",
+        parentScript:
+          "I know mornings are hard, and I know the routine feels non-negotiable right now. But here's what I see: the routine is getting longer, not shorter, and it's costing you things you care about. I'm not going to police your morning, but I am going to leave for work at 7:30 whether or not you're ready. That's a household boundary, not a punishment. Let's talk about what support you need to make mornings workable.",
+      },
+    ],
     relatedSituationSlugs: ["specific-order-restarts", "leaving-house-forever", "dressing-touching-adjusting"]
   },
 
@@ -3553,6 +4414,29 @@ export const situations: Situation[] = [
       "Your child is experiencing intrusive images of catastrophic events (house fires, break-ins) that feel vivid and real",
       "They're asking you to check things or confirm safety excessively throughout the day, not just at departure time"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child can't leave the house without a lengthy checking ritual: are the lights off, are the faucets shut, is the stove off, are the windows closed, is the door locked? They may circle back inside multiple times, check the same things in a specific order, and need you to verify their checks. The family misses the beginning of movies, arrives late to school, and can't do spontaneous outings because leaving requires 20-30 minutes of preparation.",
+        parentScript:
+          "I know OCD wants you to check everything before we leave. We're going to check the door lock once, together, and then we're going. I'm not going to check anything else. I know the worried feeling is going to come, and I also know it's going to fade once we're in the car and doing something fun. You've done this before. Ready?",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen can't leave their room, the house, or any space without extensive checking. They may photograph the stove, the locks, and the windows to review later. They circle the house multiple times, checking and rechecking. They're late to school, late meeting friends, and have started canceling plans because the leaving ritual is too exhausting. They may call home from school to ask if everything is okay, unable to focus until they receive confirmation.",
+        parentScript:
+          "I see you going back to check the door again. I checked it once, and that's enough. I'm going to the car now, and I'd love for you to come with me. The anxiety about whether the door is locked is going to ride in the car with us for a few minutes, and then it's going to get bored and quiet down. That's how this works. Trust the process.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child has a leaving-the-house ritual that takes 30-60 minutes. They may circle their apartment checking every appliance, every outlet, every lock. They've been late to work, missed flights, and cancelled plans because of the ritual. They may call you after leaving to ask if they left the stove on during a visit. Roommates are bewildered by the checking and re-checking. They've started working from home or avoiding going out to escape the exit ritual.",
+        parentScript:
+          "I'm not going to confirm that the stove was off when you left. I know that's hard. Here's what I believe: you are a capable adult who can check your home once before leaving, and that one check is enough. The doubt you feel after leaving is OCD, not reality. What tools has your therapist given you for handling the post-leaving anxiety? Let's talk about those instead.",
+      },
+    ],
     relatedSituationSlugs: ["morning-routine-hostage", "checking-door-locks", "doorways-certain-number"]
   },
 
@@ -3623,6 +4507,29 @@ export const situations: Situation[] = [
       "Your child becomes physically aggressive (hitting, kicking, throwing objects) when restarts are prevented",
       "The restart behavior has spread to school — teachers report similar patterns with classroom routines or work completion",
       "Your child expresses intense guilt or fear about what will happen if the routine isn't perfect, including fears about family members getting hurt"
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child needs to do things in a rigid order -- brush teeth, then wash face, then walk out of the bathroom with the right foot first. If any step is out of sequence or doesn't feel right, they insist on starting the entire routine over from the beginning. Bedtime, morning, and mealtimes all have specific sequences. A single disruption can add 30 minutes to a routine. They can't articulate why the order matters, just that it has to be that way.",
+        parentScript:
+          "I know you want to start over, but we're going to keep going from here. We already brushed teeth -- that counts! The Worry Monster says it doesn't count, but it does. Our teeth are clean. Let's keep moving to the next step. You're going to feel a little uncomfortable, and that's okay. That's just the Worry Monster getting quieter.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has routines that must proceed in an exact order, and any interruption -- a sibling talking, a door closing, a noise -- requires a complete restart. What should take 10 minutes takes 40. They become frustrated and tearful when they have to restart again and again. The routines are expanding to include more steps. They know it's \"ridiculous\" but feel genuine distress if they try to skip the restart. Family members have learned to tiptoe during routines, which accommodates the OCD.",
+        parentScript:
+          "I can see that OCD is making you restart, and I know it feels impossible to keep going without doing that. But every time you restart, OCD gets stronger. What if we tried continuing from where you are, even though it feels wrong? The wrong feeling is temporary. I'll sit with you through it. You don't have to do this perfectly to do it well.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen's restart rituals dominate daily life. They may restart homework sessions if they don't begin at the 'right' moment, restart showers if the water temperature changes, or restart getting dressed if they put the left sock on before the right. They're exhausted by the constant restarting and may avoid starting activities altogether because they know the restart cycle is waiting. Time management has collapsed because no activity takes a predictable amount of time.",
+        parentScript:
+          "I know the restarting is exhausting -- I can see how frustrated you are. OCD is the one insisting things have to start over, not you. What if we made a rule together: no restarts today, just once through? I know it's going to feel wrong. That feeling is data -- it tells us OCD is uncomfortable, and that means we're on the right track. I'm here for all of it.",
+      },
     ],
     relatedSituationSlugs: ["morning-routine-hostage", "bedtime-rigid-rituals", "goodnight-exact-sequence"]
   },
@@ -3698,6 +4605,36 @@ export const situations: Situation[] = [
       "Siblings are developing anxiety symptoms of their own or are expressing significant distress about the family dynamics",
       "Your child becomes aggressive or self-harming when family members don't follow OCD rules",
       "You and your co-parent are in significant conflict about how to handle the rituals, and it's affecting your relationship"
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child insists that everyone at the dinner table follow specific rules: sit in certain seats, use certain utensils, eat in a certain order. If someone coughs, or a sibling reaches across the table, the meal may be 'ruined' and your child melts down. Family dinners have become stressful performances where everyone walks on eggshells. Siblings are angry that one child's OCD is controlling the entire family.",
+        parentScript:
+          "I love eating dinner with you, and I know the Worry Monster has a lot of rules about dinner. But Daddy is going to sit wherever he wants tonight, and sissy can use whatever fork she likes. The Worry Monster might get upset about that, and we're going to let it be upset while we eat our yummy food. Our family dinner is about being together, not about rules.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has imposed a set of mealtime rituals on the entire family: specific seating, specific prayer or pre-meal routine, no one can start until they say so, and certain topics can't be discussed at the table. Violations cause visible distress and sometimes tearful outbursts. Siblings resent the control, and you've been accommodating to keep the peace. Family outings to restaurants are dreaded because the rituals can't be maintained in public.",
+        parentScript:
+          "I hear OCD when it tries to make rules for the whole family at dinner. And I love you too much to follow those rules because following them makes OCD bigger. Tonight, dinner is going to be normal: people sit where they want, eat how they want, and talk about whatever they want. I know that's going to be uncomfortable for you. I'm right here, and the discomfort will pass.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen's rituals have expanded to control family outings, holiday celebrations, and everyday meals. They may insist on veto power over restaurant choices, require specific seating at family events, and become angry or withdrawn when their rituals aren't accommodated. The family has been organizing around the OCD to avoid conflict, but resentment is building. Siblings avoid family meals, and your partner may disagree about how to handle the situation.",
+        parentScript:
+          "I know you have specific needs at mealtimes right now, and I want to be supportive without feeding OCD. So here's what I can offer: a calm environment, no judgment, and the same meal everyone else is having. What I can't offer is changing how the whole family eats to match OCD's rules. That's not helping you -- it's making your world smaller. Let's find the line between supporting you and supporting OCD.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child's mealtime rituals disrupt family gatherings when they visit. They may insist on specific seating, separate utensils, or refuse to eat if the meal wasn't prepared to their specifications. Holiday dinners are tense, with other family members frustrated by the demands. Your adult child may avoid family meals altogether, choosing to eat alone when they visit, which makes everyone sad.",
+        parentScript:
+          "When you come home for dinner, I'm going to cook the way I always have. I'm not going to change the seating arrangement or use separate utensils. I love you, and these boundaries are an act of love. If you need to eat separately, that's your choice, and I'll understand -- but I'm not going to reshape family dinner around OCD anymore. I'd rather have you at the table, uncomfortable, than eating alone in your room.",
+      },
     ],
     relatedSituationSlugs: ["food-prepared-specific-way", "specific-order-restarts", "wash-hands-before-touching"]
   },
@@ -3778,6 +4715,29 @@ export const situations: Situation[] = [
       "Your child is losing sleep because rituals must be completed before bed, or they wake up to perform rituals during the night",
       "They've started asking other family members to perform rituals on their behalf (\"Mom, you need to say this phrase or something bad will happen\")"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child believes with absolute certainty that if they don't perform their ritual -- tapping the door three times, saying a special word, stepping over cracks -- something terrible will happen to you, to them, or to the family. They can't explain the logic because there isn't any; the connection is purely emotional. They become hysterical if prevented from completing the ritual, genuinely terrified that their failure will cause harm.",
+        parentScript:
+          "I know you're scared that something bad will happen if you don't tap the door. The Worry Monster made up that rule, and it's not real. Nothing bad is going to happen. We're going to walk through the door without tapping, and I'm going to hold your hand. Tomorrow morning, we'll see that everyone is still safe, and the Worry Monster was wrong again.",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has developed a belief system connecting specific rituals to preventing harm: tapping, counting, repeating words or phrases. They may need to perform the ritual a specific number of times, and if they lose count, they start over. They understand intellectually that tapping a desk doesn't prevent car accidents, but the emotional conviction is overpowering. They spend increasing amounts of time on the rituals, and the consequences they fear are becoming more extreme (\"Mom will die if I don't do this\").",
+        parentScript:
+          "I know OCD is telling you that your ritual keeps the family safe. I understand how real that feels. But I want you to think about this: have there ever been times you forgot to do the ritual and everyone was still okay? OCD can't give you credit for those times because it would prove OCD wrong. The ritual doesn't have any power. You are safe without it. We are safe without it. Let's prove it together.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen may be performing extensive mental rituals -- counting, praying, repeating phrases -- to prevent catastrophic outcomes. They may not tell you about the content because the fears feel irrational and embarrassing (\"If I don't count to 47 before the light changes, Mom will get cancer\"). The rituals are consuming significant mental bandwidth, making it hard to concentrate on schoolwork or be present in conversations. They may appear distracted, zoned out, or not listening when they're actually performing internal rituals.",
+        parentScript:
+          "I can tell something is taking up a lot of space in your head. You don't have to tell me what it is if you're not ready, but I want you to know: no thought or ritual you perform has the power to make something bad happen or prevent something bad from happening. That's magical thinking, and it's a known part of OCD. You're not responsible for keeping everyone safe through rituals. That's not how the world works. Can we talk about what kind of help might make this lighter?",
+      },
+    ],
     relatedSituationSlugs: ["counts-repeats-prevent-bad", "responsible-keeping-family-safe", "bedtime-rigid-rituals"]
   },
 
@@ -3853,6 +4813,29 @@ export const situations: Situation[] = [
       "Your child is avoiding activities, places, or people because they trigger the mental rituals",
       "They express shame, hopelessness, or frustration about not being able to control their thoughts — saying things like 'my brain is broken' or 'I'm going crazy'"
     ],
+        ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child counts silently during daily activities: steps on the sidewalk, bites of food, times they blink. They repeat words or phrases under their breath to 'prevent' bad things from happening. They may need to rewrite words until they've written them a 'safe' number of times. The counting is invisible to most people, but you notice their lips moving, their distracted expression, and the time everything takes. They're exhausted by the mental effort.",
+        parentScript:
+          "I notice you're counting again, and I know it feels important. But here's the thing about OCD's counting rules: they never end. First it's 3, then it's 7, then it's 13. OCD will keep raising the number because counting doesn't actually prevent anything. What if you tried letting the count be 'wrong' one time today? I'll be right here. Nothing bad will happen.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen has sophisticated mental counting and repeating rituals that are nearly invisible. They may count syllables in conversations, repeat phrases in their head a certain number of times, or need to start tasks at a 'right' time on the clock. Schoolwork is affected because they count while reading and lose comprehension. They feel trapped by the rituals but terrified to stop because OCD has convinced them the counting keeps bad things at bay.",
+        parentScript:
+          "I know you have mental rituals that you don't always want to talk about. I respect that. But I also want you to consider this: the counting is OCD's way of keeping you busy so you don't realize it has no power. Every time you count to prevent something bad, OCD gets stronger. If you ever want to try stopping, even for one hour, I'll be here to sit with whatever comes up. No judgment.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child's counting and repeating rituals interfere with work, school, and relationships. They may need to read emails a 'safe' number of times, count steps between rooms, or repeat phrases before speaking in meetings. They're functionally impaired but hiding it well from everyone except you. They may call you to repeat a phrase back to them or ask you to count something with them. The rituals have expanded over years and feel cemented.",
+        parentScript:
+          "When you call me to repeat a phrase, I know that's OCD asking me to participate in a ritual. I love you, and I'm not going to do it anymore. Not because I don't care, but because participating is making it worse. You are capable of sitting with the discomfort. Your therapist can help you with structured response prevention. I'm here for everything else -- just not the rituals.",
+      },
+    ],
     relatedSituationSlugs: ["bad-will-happen-no-ritual", "avoids-unlucky-numbers", "doorways-certain-number"]
   },
 
@@ -3923,6 +4906,29 @@ export const situations: Situation[] = [
       "The avoidance is causing social problems — refusing to attend parties, play sports with certain jersey numbers, or eat at restaurants",
       "Your child is becoming increasingly rigid and distressed, even when you're actively working on exposures together",
       "They've started attributing real-life negative events (a bad grade, a friend being sick) to having encountered an 'unlucky' thing, reinforcing the magical connection"
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "4-7",
+        description:
+          "Your young child has designated certain numbers as 'bad' or 'scary.' They refuse to use that many of something (won't eat 4 crackers, won't use the 4th crayon), freak out if they notice the number on a sign or clock, and may avoid pages in books. They also may have 'lucky' colors and 'unlucky' colors, refusing to wear certain colors or use certain toys. The rules seem arbitrary but are absolutely rigid.",
+        parentScript:
+          "I know you don't like the number 4 right now because the Worry Monster said it's unlucky. But numbers are just numbers -- they can't be lucky or unlucky. Look, I'm going to give you 4 crackers and we're both going to be totally fine. The Worry Monster might say otherwise, but we've caught the Worry Monster fibbing before, haven't we?",
+      },
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has an elaborate system of lucky and unlucky numbers, colors, and words. They avoid certain channels, won't sit in specific seats, and may refuse to answer question number 13 on a test. They cross out 'unlucky' words in books, choose clothes based on 'lucky' colors, and organize their day to avoid 'bad' numbers. The system is expanding and consuming more mental energy. They feel controlled by it but can't explain the logic to others.",
+        parentScript:
+          "I know OCD has a list of numbers and colors that feel dangerous. I want to try something with you: let's use the 'unlucky' number on purpose today. We'll set the volume to 13, or eat 6 carrot sticks, or whatever the OCD says is bad. Then we'll check: did anything bad happen? I'm going to do it with you. We're building evidence that numbers don't have magical power.",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen's number and color avoidance has become internalized and sophisticated. They adjust volume levels to 'safe' numbers, set alarms at specific times, and organize their social media to avoid bad numbers. They may avoid certain friends whose phone numbers contain unlucky digits. They know it's irrational and feel deeply embarrassed, but the anxiety of violating the rules feels worse than the inconvenience of following them.",
+        parentScript:
+          "I want to talk about the number thing because I can see it's getting bigger. OCD has convinced you that certain numbers are dangerous, and every time you avoid them, OCD gets stronger. What if we picked the least scary 'unlucky' number and you used it on purpose this week? Set your alarm for that number, eat that many bites of something. Let's collect data on what actually happens versus what OCD says will happen.",
+      },
     ],
     relatedSituationSlugs: ["bad-will-happen-no-ritual", "counts-repeats-prevent-bad", "eat-specific-order-bites"]
   },
@@ -3998,6 +5004,29 @@ export const situations: Situation[] = [
       "The sense of responsibility has become overwhelming enough that your child expresses wanting to give up, feeling exhausted, or being unable to enjoy anything because they're always on alert",
       "They've started involving siblings, classmates, or friends in their safety rituals (asking others to check things, reporting back on family members' safety)",
       "Your child has expressed that they would rather not be alive than carry this burden — any expression of this kind requires immediate professional intervention"
+    ],
+        ageSpecificExamples: [
+      {
+        ageRange: "8-12",
+        description:
+          "Your child has taken on the role of family protector. They check that everyone's seatbelt is fastened (multiple times), ask repeatedly if you locked the door, and lie awake worrying about burglars, fires, or car accidents. They may try to control the family's schedule to minimize 'risks' -- no driving in rain, no leaving the house after dark. They feel personally responsible for preventing any harm to the family, and the weight of that imagined responsibility is crushing them.",
+        parentScript:
+          "I can see you're trying to keep everyone safe, and that shows what a caring person you are. But keeping the family safe isn't your job -- it's mine. When OCD tells you that you have to check the locks or the seatbelts or the stove, it's putting an adult burden on a kid's shoulders. You get to be a kid. I've got the safety stuff covered. Can you trust me with that?",
+      },
+      {
+        ageRange: "13-18",
+        description:
+          "Your teen feels an outsized sense of responsibility for the family's safety and wellbeing. They may monitor the news for threats, insist on knowing everyone's location at all times, and perform elaborate checking rituals before anyone leaves the house. They may feel responsible for a parent's health, a sibling's safety, or the family's financial security. The responsibility feels real and urgent, and they're unable to relax or enjoy activities because the vigilance never turns off.",
+        parentScript:
+          "I see how much pressure you're putting on yourself to keep everyone safe. That's OCD giving you a job that isn't yours. I'm the parent. I handle the safety and the worrying. Your job is to be a teenager. I know handing that worry over to me feels risky, and I know OCD is going to resist it. But I need you to hear this: you are not responsible for preventing bad things from happening to this family. None of us are. We just live our lives and handle what comes.",
+      },
+      {
+        ageRange: "18+",
+        description:
+          "Your adult child may call daily to confirm family members' safety, monitor location-sharing apps obsessively, and experience panic when family members don't respond to texts immediately. They may have trouble functioning at college or work because they're consumed with worry about the family back home. They may feel they can't go on vacation, move away, or live their own life because something bad might happen to the family in their absence. This hyper-responsibility is paralyzing their ability to launch into independent adulthood.",
+        parentScript:
+          "I know you worry about us, and it comes from love. But the daily check-in calls aren't just checking in -- they're rituals. I'm going to call you once a week, and I'm going to be fine between calls. You don't need to monitor our safety to keep us safe -- that's not how it works. You deserve to build your own life without feeling like you're responsible for ours. Let's talk about what your therapist says about this.",
+      },
     ],
     relatedSituationSlugs: ["bad-will-happen-no-ritual", "counts-repeats-prevent-bad", "confirm-stove-off"]
   },
