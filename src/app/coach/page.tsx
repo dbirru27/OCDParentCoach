@@ -100,7 +100,7 @@ interface AttachedFile {
   content: string; // parsed text content
 }
 
-const ACCEPTED_TYPES = ".xlsx,.xls,.csv,.txt,.pdf,.doc,.docx";
+const SUPPORTED_EXTENSIONS = new Set(["xlsx", "xls", "csv", "txt", "pdf", "doc", "docx", "md"]);
 
 async function parseFile(file: File): Promise<AttachedFile> {
   const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
@@ -119,8 +119,8 @@ async function parseFile(file: File): Promise<AttachedFile> {
     return { name: file.name, type: "excel", content: sheets.join("\n\n") };
   }
 
-  // CSV / plain text
-  if (ext === "csv" || ext === "txt") {
+  // CSV / plain text / markdown
+  if (ext === "csv" || ext === "txt" || ext === "md") {
     const text = await file.text();
     return { name: file.name, type: ext === "csv" ? "csv" : "text", content: text };
   }
@@ -339,6 +339,12 @@ export default function CoachPage() {
     // Reset input so the same file can be re-selected
     e.target.value = "";
 
+    const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
+    if (!SUPPORTED_EXTENSIONS.has(ext)) {
+      alert(`Unsupported file type (.${ext}). Supported: Excel, CSV, PDF, TXT, MD, DOCX.`);
+      return;
+    }
+
     // 5MB limit
     if (file.size > 5 * 1024 * 1024) {
       alert("File too large. Please upload files under 5MB.");
@@ -549,7 +555,7 @@ export default function CoachPage() {
                 <input
                   ref={fileInputRef}
                   type="file"
-                  accept={ACCEPTED_TYPES}
+                  accept="*/*"
                   onChange={handleFileSelect}
                   className="hidden"
                 />
