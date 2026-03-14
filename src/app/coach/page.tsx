@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback, type FormEvent, type KeyboardEvent } from "react";
-import { MessageCircle, Mic, Send, Plus, Search, Menu, X, Loader2 } from "lucide-react";
+import { MessageCircle, Mic, Send, Plus, Search, Menu, X, Loader2, Paperclip, FileSpreadsheet, FileText as FileTextIcon } from "lucide-react";
 import { InfoTooltip } from "@/components/info-tooltip";
 import { glossary } from "@/lib/glossary";
 
@@ -91,6 +91,50 @@ function renderMarkdown(text: string): string {
 }
 
 /* ------------------------------------------------------------------ */
+/*  File parsing                                                       */
+/* ------------------------------------------------------------------ */
+
+interface AttachedFile {
+  name: string;
+  type: string; // 'excel' | 'csv' | 'text' | 'pdf'
+  content: string; // parsed text content
+}
+
+const ACCEPTED_TYPES = ".xlsx,.xls,.csv,.txt,.pdf,.doc,.docx";
+
+async function parseFile(file: File): Promise<AttachedFile> {
+  const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
+
+  // Excel files
+  if (ext === "xlsx" || ext === "xls") {
+    const XLSX = await import("xlsx");
+    const buffer = await file.arrayBuffer();
+    const wb = XLSX.read(buffer, { type: "array" });
+    const sheets: string[] = [];
+    for (const name of wb.SheetNames) {
+      const ws = wb.Sheets[name];
+      const text = XLSX.utils.sheet_to_csv(ws);
+      sheets.push(wb.SheetNames.length > 1 ? `--- Sheet: ${name} ---\n${text}` : text);
+    }
+    return { name: file.name, type: "excel", content: sheets.join("\n\n") };
+  }
+
+  // CSV / plain text
+  if (ext === "csv" || ext === "txt") {
+    const text = await file.text();
+    return { name: file.name, type: ext === "csv" ? "csv" : "text", content: text };
+  }
+
+  // For other files, read as text (best effort)
+  try {
+    const text = await file.text();
+    return { name: file.name, type: "text", content: text };
+  } catch {
+    return { name: file.name, type: "text", content: `[Could not parse ${file.name}]` };
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
@@ -99,10 +143,13 @@ export default function CoachPage() {
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [attachedFile, setAttachedFile] = useState<AttachedFile | null>(null);
+  const [isParsingFile, setIsParsingFile] = useState(false);
 
   const chatEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   /* Auto-scroll ---------------------------------------------------- */
   const scrollToBottom = useCallback(() => {
@@ -125,22 +172,38 @@ export default function CoachPage() {
   const sendMessage = useCallback(
     async (text: string) => {
       const trimmed = text.trim();
-      if (!trimmed || isStreaming) return;
+      if ((!trimmed && !attachedFile) || isStreaming) return;
+      const messageText = trimmed || "Please review this file and share your thoughts.";
+
+      // Build display message (what the user sees)
+      let displayContent = messageText;
+      if (attachedFile) {
+        displayContent = `📎 ${attachedFile.name}\n\n${messageText}`;
+      }
 
       const userMsg: Message = {
         id: crypto.randomUUID(),
         role: "user",
-        content: trimmed,
+        content: displayContent,
       };
+
+      // Build API message with file content injected
+      let apiContent = messageText;
+      if (attachedFile) {
+        apiContent = `[The user has uploaded a file: "${attachedFile.name}"]\n\nFile contents:\n\`\`\`\n${attachedFile.content}\n\`\`\`\n\nUser message: ${messageText}`;
+      }
+
+      const apiUserMsg = { role: "user" as const, content: apiContent };
 
       // Build the conversation for the API (exclude the static welcome message)
       const conversationForApi = [
-        ...messages.filter((m) => m.id !== "welcome"),
-        userMsg,
-      ].map((m) => ({ role: m.role, content: m.content }));
+        ...messages.filter((m) => m.id !== "welcome").map((m) => ({ role: m.role, content: m.content })),
+        apiUserMsg,
+      ];
 
       setMessages((prev) => [...prev, userMsg]);
       setInput("");
+      setAttachedFile(null);
       setIsStreaming(true);
 
       // Create a placeholder assistant message
@@ -241,7 +304,7 @@ export default function CoachPage() {
         abortRef.current = null;
       }
     },
-    [isStreaming, messages]
+    [isStreaming, messages, attachedFile]
   );
 
   /* Handlers ------------------------------------------------------- */
@@ -265,8 +328,36 @@ export default function CoachPage() {
     if (abortRef.current) abortRef.current.abort();
     setMessages([WELCOME_MESSAGE]);
     setInput("");
+    setAttachedFile(null);
     setIsStreaming(false);
     setSidebarOpen(false);
+  };
+
+  const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    // Reset input so the same file can be re-selected
+    e.target.value = "";
+
+    // 5MB limit
+    if (file.size > 5 * 1024 * 1024) {
+      alert("File too large. Please upload files under 5MB.");
+      return;
+    }
+
+    setIsParsingFile(true);
+    try {
+      const parsed = await parseFile(file);
+      // Truncate very large content
+      if (parsed.content.length > 30000) {
+        parsed.content = parsed.content.slice(0, 30000) + "\n\n[Content truncated — file was too large to include in full]";
+      }
+      setAttachedFile(parsed);
+    } catch {
+      alert("Could not read this file. Please try a different format.");
+    } finally {
+      setIsParsingFile(false);
+    }
   };
 
   /* Derived state -------------------------------------------------- */
@@ -433,14 +524,56 @@ export default function CoachPage() {
         <div className="border-t border-cream-dark bg-white p-4">
           <div className="mx-auto max-w-2xl">
             <form onSubmit={handleSubmit}>
+              {/* Attached file indicator */}
+              {attachedFile && (
+                <div className="mb-2 flex items-center gap-2 rounded-xl bg-sage/10 border border-sage/20 px-3 py-2">
+                  {attachedFile.type === "excel" ? (
+                    <FileSpreadsheet className="h-4 w-4 text-sage-dark shrink-0" />
+                  ) : (
+                    <FileTextIcon className="h-4 w-4 text-sage-dark shrink-0" />
+                  )}
+                  <span className="text-xs text-sage-dark truncate flex-1">
+                    {attachedFile.name}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setAttachedFile(null)}
+                    className="text-charcoal/40 hover:text-charcoal transition-colors"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+              )}
               <div className="flex items-end gap-2 rounded-2xl border border-cream-dark bg-cream p-2">
+                {/* Hidden file input */}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept={ACCEPTED_TYPES}
+                  onChange={handleFileSelect}
+                  className="hidden"
+                />
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={isStreaming || isParsingFile}
+                  className="rounded-xl p-2 text-charcoal/40 hover:bg-white hover:text-charcoal transition-colors disabled:opacity-50"
+                  aria-label="Attach file"
+                  title="Upload Excel, CSV, or text file"
+                >
+                  {isParsingFile ? (
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  ) : (
+                    <Paperclip className="h-5 w-5" />
+                  )}
+                </button>
                 <textarea
                   ref={textareaRef}
                   rows={1}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Type a message..."
+                  placeholder={attachedFile ? "Add a message about this file..." : "Type a message..."}
                   disabled={isStreaming}
                   className="flex-1 resize-none bg-transparent px-3 py-2 text-sm outline-none placeholder:text-charcoal/40 disabled:opacity-50"
                 />
@@ -453,7 +586,7 @@ export default function CoachPage() {
                 </button>
                 <button
                   type="submit"
-                  disabled={!input.trim() || isStreaming}
+                  disabled={(!input.trim() && !attachedFile) || isStreaming}
                   className="rounded-xl bg-sage p-2 text-white hover:bg-sage-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label="Send message"
                 >
