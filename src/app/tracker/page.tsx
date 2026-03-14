@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { Plus, Download, FileText, ClipboardList, History } from "lucide-react";
+import { Plus, Download, FileText, ClipboardList, History, FileSpreadsheet } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -414,6 +414,42 @@ function exportCSV(entries: TrackerEntry[]) {
   URL.revokeObjectURL(url);
 }
 
+// ── Excel Export ────────────────────────────────────────────────────────────────
+
+async function exportExcel(entries: TrackerEntry[]) {
+  const XLSX = await import("xlsx");
+
+  const data = entries.map((e) => ({
+    Date: e.date,
+    Time: e.time,
+    "Trigger Description": e.triggerDescription,
+    "Trigger Tags": e.triggerTags.join(", "),
+    "Behavior Description": e.behaviorDescription,
+    Intensity: e.intensity,
+    Duration: e.duration,
+    "Response Type": e.responseType,
+    Outcome: e.outcome,
+    "Parent Mood": e.parentMood,
+    Notes: e.notes,
+    "Quick Log": e.isQuickLog ? "Yes" : "No",
+  }));
+
+  const ws = XLSX.utils.json_to_sheet(data);
+
+  // Auto-size columns
+  const colWidths = Object.keys(data[0] || {}).map((key) => ({
+    wch: Math.max(
+      key.length,
+      ...data.map((row) => String((row as Record<string, unknown>)[key] ?? "").length)
+    ),
+  }));
+  ws["!cols"] = colWidths;
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Tracker Entries");
+  XLSX.writeFile(wb, `ocd-tracker-export-${new Date().toISOString().slice(0, 10)}.xlsx`);
+}
+
 // ── Page Component ─────────────────────────────────────────────────────────────
 
 export default function TrackerPage() {
@@ -599,6 +635,14 @@ export default function TrackerPage() {
           >
             <Download className="h-4 w-4" />
             Export CSV
+          </button>
+          <button
+            onClick={() => exportExcel(allEntries)}
+            disabled={allEntries.length === 0}
+            className="inline-flex items-center gap-2 rounded-xl border border-cream-dark bg-white px-4 py-2.5 text-sm text-charcoal/60 hover:bg-cream transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            <FileSpreadsheet className="h-4 w-4" />
+            Export Excel
           </button>
           <button
             disabled
