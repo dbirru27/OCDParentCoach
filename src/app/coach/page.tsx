@@ -333,19 +333,13 @@ export default function CoachPage() {
     setSidebarOpen(false);
   };
 
-  const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    // Reset input so the same file can be re-selected
-    e.target.value = "";
-
+  const processFile = async (file: File) => {
     const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
     if (!SUPPORTED_EXTENSIONS.has(ext)) {
-      alert(`Unsupported file type (.${ext}). Supported: Excel, CSV, PDF, TXT, MD, DOCX.`);
+      alert(`Unsupported file type (.${ext}). Supported: Excel (.xlsx, .xls), CSV, PDF, TXT, MD, DOCX.`);
       return;
     }
 
-    // 5MB limit
     if (file.size > 5 * 1024 * 1024) {
       alert("File too large. Please upload files under 5MB.");
       return;
@@ -354,7 +348,6 @@ export default function CoachPage() {
     setIsParsingFile(true);
     try {
       const parsed = await parseFile(file);
-      // Truncate very large content
       if (parsed.content.length > 30000) {
         parsed.content = parsed.content.slice(0, 30000) + "\n\n[Content truncated — file was too large to include in full]";
       }
@@ -364,6 +357,25 @@ export default function CoachPage() {
     } finally {
       setIsParsingFile(false);
     }
+  };
+
+  const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    e.target.value = "";
+    processFile(file);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const file = e.dataTransfer.files?.[0];
+    if (file) processFile(file);
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
   };
 
   /* Derived state -------------------------------------------------- */
@@ -529,7 +541,7 @@ export default function CoachPage() {
         {/* Input area */}
         <div className="border-t border-cream-dark bg-white p-4">
           <div className="mx-auto max-w-2xl">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} onDrop={handleDrop} onDragOver={handleDragOver}>
               {/* Attached file indicator */}
               {attachedFile && (
                 <div className="mb-2 flex items-center gap-2 rounded-xl bg-sage/10 border border-sage/20 px-3 py-2">
@@ -555,7 +567,6 @@ export default function CoachPage() {
                 <input
                   ref={fileInputRef}
                   type="file"
-                  accept="*/*"
                   onChange={handleFileSelect}
                   className="hidden"
                 />
